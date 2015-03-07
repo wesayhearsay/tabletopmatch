@@ -15,6 +15,9 @@
 </head>
 
 <body>
+
+<!-- the angular view everything is in -->
+<div ng-view> 
 	<!-- basic index.html from bootstrap Dashboard example -->
 	<!-- header -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -45,7 +48,10 @@
 	<div class="container-fluid">
       <div class="row" >
         <div class="col-sm-3 col-md-3 sidebar">
+        	<div range-slider min="0" max="100" model-min="demo1.min" model-max="demo1.max"></div>
+
           <ul class="nav nav-sidebar">
+
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Analytics</a></li>
@@ -222,8 +228,7 @@
       </div>
     </div>
 
-	<!-- the angular view everything is in -->
-    <div ng-view >    
+   
     </div>
 
 
@@ -247,6 +252,9 @@
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/directives.js"></script>
     <script type="text/javascript" src="js/filters.js"></script>
+    <!-- slider -->
+    <script type="text/javascript" src="lib/angular.rangeSlider.js"></script>
+
   
 </body>
 

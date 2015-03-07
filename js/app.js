@@ -1,7 +1,7 @@
 'use strict';
 
 /*main module definition*/
-var ttmatch = angular.module("ttmatchApp", ["ngRoute", "ngTouch",
+var ttmatch = angular.module("ttmatchApp", ["ngRoute", "ngTouch", "ui-rangeSlider",
     "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters"]);
 
 // make the views change when the URL is changed aka router 
@@ -10,8 +10,8 @@ ttmatch.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/', {
-            templateUrl: 'partials/firstView.html',
-            controller: 'firstViewController'
+            templateUrl: 'index.html',
+            controller: 'mainViewCtrl'
 
         }).
         otherwise({
