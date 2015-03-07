@@ -76,26 +76,7 @@
             <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>SHOW FILTERS</div>
           </div>
           <h1 class="page-header">Games</h1>
-=======
-<h3>Complexity</h3>
->>>>>>> origin/master
 
-
-</div>
-<div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
-   <div ng-controller="filterController" ng-init="showAcordeon = 0">
-      <ul ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0">
-         <ul ng-init="limit = filterLimit">
-            <li ng-repeat="currentKey in value | limitTo: limit">
-               <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" >{{ currentKey.name }}</input>
-           </li>
-           <li ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length">more</li>
-           <li ng-hide="limit<filter.themes.length" ng-click="limit = 2">less</li>
-       </ul>
-   </ul>
-   <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">HIDE</div>
-   <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">SHOW</div>
-</div>
 <h1 class="page-header">Games</h1>
 
 <div class="row placeholders">
