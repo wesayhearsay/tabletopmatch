@@ -66,10 +66,12 @@
                     <span class="input-group-addon">{{currentKey.name }}</span>
                   </div>
                </div>
-               <div class="col-md-4" ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-               </div>
-               <div class="col-md-4" ng-hide="limit<filter.themes.length" ng-click="limit = filterLimit">
-               <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+               <div class="row">
+                 <div class="col-md-4" ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                 </div>
+                 <div class="col-md-4" ng-hide="limit<filter.themes.length" ng-click="limit = filterLimit">
+                 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+                </div>
               </div>
             </div>
             <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">
