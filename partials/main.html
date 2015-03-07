@@ -1,56 +1,55 @@
-  <!-- basic index.html from bootstrap Dashboard example -->
-  <!-- header -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid" >
+	<!-- basic index.html from bootstrap Dashboard example -->
+	<!-- header -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+     <div class="container-fluid" >
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Tabletop Match</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
       </div>
-    </nav>
+      <div id="navbar" class="navbar-collapse collapse">
+       <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+      </form>
+  </div>
+</div>
+</nav>
 
-  <div class="container-fluid">
-      <div class="row" >
-        <div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar">
+<div class="container-fluid">
+ <div class="row" >
+    <div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar">
         
-          <div id="playersFilter" ng-controller="playersController">
-            <h3>Number of players</h3>
-            <button id="minusButton" class="btn btn-primary" type="button">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-            </button>
-            <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
-            <button id="plusButton" class="btn btn-primary" type="button">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </button>
-          </div><!-- end #playersFilter -->
+       <div id="playersFilter" ng-controller="playersController">
+          <h3>Number of players</h3>
+          <button id="minusButton" class="btn btn-primary" type="button">
+             <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+         </button>
+         <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
+         <button id="plusButton" class="btn btn-primary" type="button">
+             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+         </button>
+     </div><!-- end #playersFilter -->
 
-          <div id="ageFilter">
-            <h3>Minimum age</h3>    
-          </div>
-          
-        <div id="timeFilter" ng-controller="timeController">
-          <h3>Time</h3>
-        <div range-slider min="20" max="120" model-min="timeLimit.min" model-max="timeLimit.max"></div>
-        </div>
-        
-          <h3>Complexity</h3>
+     <div id="ageFilter">
+      <h3>Minimum age</h3>    
+  </div>
+  
+  <div id="timeFilter" ng-controller="timeController">
+   <h3>Time</h3>
+   <div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax"></div>
+</div>
 
+<<<<<<< HEAD
         
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
@@ -77,158 +76,204 @@
             <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>SHOW FILTERS</div>
           </div>
           <h1 class="page-header">Games</h1>
+=======
+<h3>Complexity</h3>
+>>>>>>> origin/master
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
 
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
+   <div ng-controller="filterController" ng-init="showAcordeon = 0">
+      <ul ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0">
+         <ul ng-init="limit = filterLimit">
+            <li ng-repeat="currentKey in value | limitTo: limit">
+               <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" >{{ currentKey.name }}</input>
+           </li>
+           <li ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length">more</li>
+           <li ng-hide="limit<filter.themes.length" ng-click="limit = 2">less</li>
+       </ul>
+   </ul>
+   <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">HIDE</div>
+   <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">SHOW</div>
+</div>
+<h1 class="page-header">Games</h1>
+
+<div class="row placeholders">
+  <div class="col-xs-6 col-sm-3 placeholder">
+     <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+     <h4>Label</h4>
+     <span class="text-muted">Something else</span>
+ </div>
+ <div class="col-xs-6 col-sm-3 placeholder">
+     <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+     <h4>Label</h4>
+     <span class="text-muted">Something else</span>
+ </div>
+ <div class="col-xs-6 col-sm-3 placeholder">
+     <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+     <h4>Label</h4>
+     <span class="text-muted">Something else</span>
+ </div>
+ <div class="col-xs-6 col-sm-3 placeholder">
+     <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+     <h4>Label</h4>
+     <span class="text-muted">Something else</span>
+ </div>
+</div>
+
+<h2 class="sub-header">Section title</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>Header</th>
+           <th>Header</th>
+           <th>Header</th>
+           <th>Header</th>
+       </tr>
+   </thead>
+   <tbody>
+    <tr>
+       <td>1,001</td>
+       <td>Lorem</td>
+       <td>ipsum</td>
+       <td>dolor</td>
+       <td>sit</td>
+   </tr>
+   <tr>
+       <td>1,002</td>
+       <td>amet</td>
+       <td>consectetur</td>
+       <td>adipiscing</td>
+       <td>elit</td>
+   </tr>
+   <tr>
+       <td>1,003</td>
+       <td>Integer</td>
+       <td>nec</td>
+       <td>odio</td>
+       <td>Praesent</td>
+   </tr>
+   <tr>
+       <td>1,003</td>
+       <td>libero</td>
+       <td>Sed</td>
+       <td>cursus</td>
+       <td>ante</td>
+   </tr>
+   <tr>
+       <td>1,004</td>
+       <td>dapibus</td>
+       <td>diam</td>
+       <td>Sed</td>
+       <td>nisi</td>
+   </tr>
+   <tr>
+       <td>1,005</td>
+       <td>Nulla</td>
+       <td>quis</td>
+       <td>sem</td>
+       <td>at</td>
+   </tr>
+   <tr>
+       <td>1,006</td>
+       <td>nibh</td>
+       <td>elementum</td>
+       <td>imperdiet</td>
+       <td>Duis</td>
+   </tr>
+   <tr>
+       <td>1,007</td>
+       <td>sagittis</td>
+       <td>ipsum</td>
+       <td>Praesent</td>
+       <td>mauris</td>
+   </tr>
+   <tr>
+       <td>1,008</td>
+       <td>Fusce</td>
+       <td>nec</td>
+       <td>tellus</td>
+       <td>sed</td>
+   </tr>
+   <tr>
+       <td>1,009</td>
+       <td>augue</td>
+       <td>semper</td>
+       <td>porta</td>
+       <td>Mauris</td>
+   </tr>
+   <tr>
+       <td>1,010</td>
+       <td>massa</td>
+       <td>Vestibulum</td>
+       <td>lacinia</td>
+       <td>arcu</td>
+   </tr>
+   <tr>
+       <td>1,011</td>
+       <td>eget</td>
+       <td>nulla</td>
+       <td>Class</td>
+       <td>aptent</td>
+   </tr>
+   <tr>
+       <td>1,012</td>
+       <td>taciti</td>
+       <td>sociosqu</td>
+       <td>ad</td>
+       <td>litora</td>
+   </tr>
+   <tr>
+       <td>1,013</td>
+       <td>torquent</td>
+       <td>per</td>
+       <td>conubia</td>
+       <td>nostra</td>
+   </tr>
+   <tr>
+       <td>1,014</td>
+       <td>per</td>
+       <td>inceptos</td>
+       <td>himenaeos</td>
+       <td>Curabitur</td>
+   </tr>
+   <tr>
+       <td>1,015</td>
+       <td>sodales</td>
+       <td>ligula</td>
+       <td>in</td>
+       <td>libero</td>
+   </tr>
+</tbody>
+</table>
+</div>
+
+<div class="row">
+  <h1>Name of Game</h1>
+</div>
+<div class="row details">
+  <div class:"col-md-4">
+     <img src="./img/dominion_md.jpg" id="gameImage" />
+ </div>
+ <div class="col-md-8" id="detailsText">
+     <h3>Description:</h3>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </div>
+</div>
+
+<div ng-controller="ratingController">
+ <h4>Rate This Game!</h4>
+ <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+ <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+ <button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Add to my Library</button>
+ <hr />
+</div>
+</div>
+</div>

@@ -2,7 +2,7 @@
 
 /*main module definition*/
 var ttmatch = angular.module("ttmatchApp", ["ngRoute", "ngTouch", "ui-rangeSlider",
-    "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters"]);
+    "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters", "ui.bootstrap"]);
 
 // make the views change when the URL is changed aka router 
 
