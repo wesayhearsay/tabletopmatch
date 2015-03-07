@@ -14,7 +14,9 @@ controllersModule.controller('playersController', function($scope){
 controllersModule.controller('timeController', function($scope, $location){
 	$scope.timeLimit = {
     	min: 10,
-    	max: 360
+    	max: 360,
+    	userMin: 20,
+    	userMax: 120,
     };
 });
 
