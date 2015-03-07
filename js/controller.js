@@ -13,3 +13,8 @@ controllersModule.controller('mainViewCtrl', function($scope, $location){
 
 
 });
+
+controllersModule.controller('filterController', function($scope){
+	$scope.filterLimit = 2;
+  	$scope.filter = game_tags;
+});
