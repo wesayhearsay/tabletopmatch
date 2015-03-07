@@ -10,13 +10,14 @@ ttmatch.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/', {
-            templateUrl: 'index.html',
+            templateUrl: 'partials/main.html',
             controller: 'mainViewCtrl'
 
-        }).
-        otherwise({
-            redirectTo: '/'
         });
+        // .
+        // otherwise({
+        //     redirectTo: '/'
+        // });
     }
 ]);
 ttmatch.config(['$httpProvider',function($httpProvider) {
