@@ -27,28 +27,31 @@
 
   <div class="container-fluid">
       <div class="row" >
-        <div class="col-sm-3 col-md-3 sidebar">
-          <div range-slider min="0" max="100" model-min="demo1.min" model-max="demo1.max"></div>
+        <div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar">
+        
+          <div id="playersFilter" ng-controller="playersController">
+            <h3>Number of players</h3>
+            <button id="minusButton" class="btn btn-primary" type="button">
+              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            </button>
+            <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
+            <button id="plusButton" class="btn btn-primary" type="button">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </div><!-- end #playersFilter -->
 
-          <ul class="nav nav-sidebar">
+          <div id="ageFilter">
+            <h3>Minimum age</h3>    
+          </div>
+          
+        <div id="timeFilter" ng-controller="timeController">
+          <h3>Time</h3>
+        <div range-slider min="20" max="120" model-min="timeLimit.min" model-max="timeLimit.max"></div>
+        </div>
+        
+          <h3>Complexity</h3>
 
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
+        
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
           <div ng-controller="filterController" ng-init="showAcordeon = 0">
@@ -63,7 +66,6 @@
             </ul>
             <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">HIDE</div>
             <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">SHOW</div>
-            <div>{{filter}}</div>
           </div>
           <h1 class="page-header">Games</h1>
 

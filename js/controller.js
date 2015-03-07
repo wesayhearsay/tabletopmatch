@@ -4,17 +4,22 @@ var controllersModule = angular.module("ttmatchApp.Controllers", [])
 
 /* Controllers */
 
-controllersModule.controller('mainViewCtrl', function($scope, $location){
-	$scope.demo1 = {
-        			min: 20,
-        			max: 80
-        		};
 
+/* Controller for the number of players */
+controllersModule.controller('playersController', function($scope){
+	$scope.numberOfPlayers = 2;
+});
 
-
+/* Controller for the time */
+controllersModule.controller('timeController', function($scope, $location){
+	$scope.timeLimit = {
+    	min: 10,
+    	max: 360
+    };
 });
 
 controllersModule.controller('filterController', function($scope){
 	$scope.filterLimit = 2;
   	$scope.filter = game_tags;
 });
+

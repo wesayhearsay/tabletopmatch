@@ -11,7 +11,7 @@ ttmatch.config(['$routeProvider',
         $routeProvider.
         when('/', {
             templateUrl: 'partials/main.html',
-            controller: 'mainViewCtrl'
+            //controller: 'mainViewCtrl'
 
         });
         // .
