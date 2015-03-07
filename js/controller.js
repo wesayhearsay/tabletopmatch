@@ -19,7 +19,7 @@ controllersModule.controller('timeController', function($scope, $location){
 });
 
 controllersModule.controller('filterController', function($scope){
-	$scope.filterLimit = 2;
+	$scope.filterLimit = tagsToShow;
   	$scope.filter = game_tags;
 });
 

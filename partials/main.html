@@ -55,17 +55,26 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
           <div ng-controller="filterController" ng-init="showAcordeon = 0">
-            <ul ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0">
-              <ul ng-init="limit = filterLimit">
-               <li ng-repeat="currentKey in value | limitTo: limit">
-                  <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" >{{ currentKey.name }}</input>
-               </li>
-               <li ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length">more</li>
-               <li ng-hide="limit<filter.themes.length" ng-click="limit = 2">less</li>
-              </ul>
-            </ul>
-            <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">HIDE</div>
-            <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">SHOW</div>
+            <div ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
+              <div class="row" ng-init="limit = filterLimit">
+               <div class="col-md-4" ng-repeat="currentKey in value | limitTo: limit">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" ></input>
+                    </span>
+                    <span class="input-group-addon">{{currentKey.name }}</span>
+                  </div>
+               </div>
+               <div class="col-md-4" ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+               </div>
+               <div class="col-md-4" ng-hide="limit<filter.themes.length" ng-click="limit = filterLimit">
+               <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+              </div>
+            </div>
+            <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">
+            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>HIDE FILTERS</div>
+            <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>SHOW FILTERS</div>
           </div>
           <h1 class="page-header">Games</h1>
 
