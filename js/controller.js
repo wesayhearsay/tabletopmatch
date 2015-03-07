@@ -23,3 +23,13 @@ controllersModule.controller('filterController', function($scope){
   	$scope.filter = game_tags;
 });
 
+controllersModule.controller('ratingController', function ($scope) {
+  $scope.rate = 7;
+  $scope.max = 10;
+  $scope.isReadonly = false;
+
+  $scope.hoveringOver = function(value) {
+    $scope.overStar = value;
+    $scope.percent = 100 * (value / $scope.max);
+  };
+});
