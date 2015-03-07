@@ -31,22 +31,26 @@
         
        <div id="playersFilter" ng-controller="playersController">
           <h3>Number of players</h3>
-          <button id="minusButton" class="btn btn-primary" type="button">
+
+          <button ng-click="numberOfPlayers = numberOfPlayers -1"  id="minusButton" class="btn btn-primary" type="button">
              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
          </button>
+
          <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
-         <button id="plusButton" class="btn btn-primary" type="button">
+
+         <button ng-click="numberOfPlayers = numberOfPlayers +1" id="plusButton" class="btn btn-primary" type="button">
              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
          </button>
      </div><!-- end #playersFilter -->
 
-     <div id="ageFilter">
+    <div id="ageFilter" ng-controller="ageController">
       <h3>Minimum age</h3>    
-  </div>
+      <div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="max" step="2" attach-handle-values="true"></div>
+    </div>
   
-  <div id="timeFilter" ng-controller="timeController">
+<div id="timeFilter" ng-controller="timeController">
    <h3>Time</h3>
-   <div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax"></div>
+   <div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true"></div>
 </div>
         
         </div>

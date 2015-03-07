@@ -10,13 +10,23 @@ controllersModule.controller('playersController', function($scope){
 	$scope.numberOfPlayers = 2;
 });
 
-/* Controller for the time */
+/* Controller for the time filter*/
 controllersModule.controller('timeController', function($scope, $location){
 	$scope.timeLimit = {
     	min: 10,
     	max: 360,
     	userMin: 20,
     	userMax: 120,
+    };
+});
+
+/* Controller for the age filter */
+controllersModule.controller('ageController', function($scope, $location){
+	$scope.ageLimit = {
+    	min: 2,
+    	max: 18,
+    	userMin: 16,
+    	userMax: 18
     };
 });
 
