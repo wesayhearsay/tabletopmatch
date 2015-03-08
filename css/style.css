@@ -112,9 +112,8 @@ body {
 
 .gameInstance {
 
-     float: left;
-
-     margin: 0.5rem;
+     min-height: 200px;
+     padding: 0.5rem;
 
  }
 
