@@ -14,9 +14,9 @@ ttmatch.config(['$routeProvider',
             //controller: 'mainViewCtrl'
 
         }).
-        when('/game', {
-            templateUrl: 'partials/gameDetail.html',
-            controller: 'ratingController'
+        when('/:gameId', {
+            templateUrl: 'partials/gameDetail2.html',
+            controller: 'gameController'
 
         });
         // .
