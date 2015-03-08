@@ -5,6 +5,7 @@ var controllersModule = angular.module("ttmatchApp.Controllers", [])
 /* Controller for the number of players */
 controllersModule.controller('playersController', function($scope) {
     $scope.numberOfPlayers = 2;
+    console.log("numberOfPlayers in controller.js " + $scope.numberOfPlayers);
 });
 controllersModule.controller('gamesController', function($scope, $http, $location, gamesService) {
     //checks if the games.json has ever been accessed before.
@@ -33,6 +34,12 @@ controllersModule.controller('timeController', function($scope, $location) {
         userMin: 20,
         userMax: 120,
     };
+    $scope.timeFilter = [0, 0];
+    console.log("$scope.timeFilter in controller.js " + $scope.timeFilter);
+    $scope.includeTime = function(timeMin, timeMax) {
+        $scope.timeFilter[0] = timeMin;
+        $scope.timeFilter[1] = timeMax;
+    }
 });
 /* Controller for the age filter */
 controllersModule.controller('ageController', function($scope, $location) {
@@ -42,6 +49,11 @@ controllersModule.controller('ageController', function($scope, $location) {
         userMin: 16,
         userMax: 18
     };
+    $scope.ageFilter;
+    console.log("$scope.ageFilter in controller.js " + $scope.ageFilter);
+    $scope.includeAge = function(minAge) {
+        $scope.ageFilter = minAge;
+    }
 });
 
 controllersModule.controller('filterController', function($scope){
