@@ -23,3 +23,15 @@ serviceModule.service('gamesService', function() {
         }
     };
 });
+
+serviceModule.service('filterService', function() {
+    var filterTags = [];
+    return {
+        get: function(value){
+            return filterTags;
+        },
+        set: function(value){
+            filterTags = value;
+        }
+    };
+});

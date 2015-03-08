@@ -3,9 +3,10 @@
 var controllersModule = angular.module("ttmatchApp.Controllers", [])
 /* Controllers */
 
-controllersModule.controller('gamesController', function($scope, $http, $location, gamesService) {
+controllersModule.controller('gamesController', function($scope, $http, $location, gamesService, filterService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
+    $scope.filterText = filterService.get();
     if (!gamesService.isInitialized()) {
     //if it hasn't been included before, an ajax call is made 
     //towards the file that is contained in the same folder as index.html
@@ -25,6 +26,24 @@ controllersModule.controller('gamesController', function($scope, $http, $locatio
       console.log(gameID);
       $location.path(':'+ gameID);
     }
+     $scope.tagFilter = function(game) {
+        var shouldShow = false;
+        if ($scope.filterText.length > 0) {
+	        for(var k=0; k<game.attributes.length; k++){    
+	            if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
+	                shouldShow = true;
+	                //return;
+	            }
+	        }
+	        if(shouldShow){
+        		return game;
+    		}else{
+    			return;
+    		}
+	    }
+        	return game;	
+    	}
+
 });
 
 /* Controller for the number of players */
@@ -73,24 +92,29 @@ controllersModule.controller('ageController', function($scope, $location) {
     }
 });
 
-controllersModule.controller('filterController', function($scope){
+controllersModule.controller('filterController', function($scope, filterService){
 	$scope.filterLimit = tagsToShow;
   	$scope.filter = game_tags;
-  	$scope.tagsInclude = [];
+  	$scope.tagsInclude = filterService.get();
+
     
     $scope.includeTag = function(tag) {
+    	$scope.tagsInclude = filterService.get();
         var i = $.inArray(tag, $scope.tagsInclude);
         if (i > -1) {
             $scope.tagsInclude.splice(i, 1);
         } else {
             $scope.tagsInclude.push(tag);
         }
+        filterService.set($scope.tagsInclude);
     }
 
 });
 controllersModule.controller('gameController', function($scope, $http, $routeParams, gamesService) {
     //gets rid of the : character
     var $id = $routeParams.gameId.substring(1);
+
+    
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time the question is changed
     if (!gamesService.isInitialized()) {
@@ -121,4 +145,5 @@ controllersModule.controller('gameController', function($scope, $http, $routePar
         $scope.overStar = value;
         $scope.percent = 100 * (value / $scope.max);
     };
+   
 });
