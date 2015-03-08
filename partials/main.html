@@ -101,8 +101,6 @@
      <h1 class="page-header">Games</h1>
 
     <div id="matches" ng-controller="gamesController">
-    <!-- <div>{{filterText}}</div> -->
-      <h2 class="sub-header">Games</h2>
       <!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
       <div ng-repeat="game in games | filter:tagFilter" class="gameInstance col-xs-6 col-sm-4 s col-md-3 col-lg-2">
        <a href ng-click="show(game.id)">
