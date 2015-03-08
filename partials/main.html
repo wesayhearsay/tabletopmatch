@@ -56,9 +56,9 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
           <div ng-controller="filterController" ng-init="showAcordeon = 0">
-            <div ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
+            <div class="well" ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
               <div class="row" ng-init="limit = filterLimit">
-               <div class="col-md-4" ng-repeat="currentKey in value | limitTo: limit">
+               <div class="col-md-3" ng-repeat="currentKey in value | limitTo: limit">
                   <div class="input-group">
                     <span class="input-group-addon">
                       <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" ></input>
@@ -67,10 +67,10 @@
                   </div>
                </div>
                <div class="row">
-                 <div class="col-md-4" ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                 <div class="col-md-4" ng-hide="limit===filter.themes.length" ng-click="limit = filter.themes.length"><span class="label label-default">Show more</span>
                  </div>
                  <div class="col-md-4" ng-hide="limit<filter.themes.length" ng-click="limit = filterLimit">
-                 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></div>
+                 <span class="label label-default">Show less</span></div>
                 </div>
               </div>
             </div>
