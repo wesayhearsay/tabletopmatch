@@ -132,9 +132,26 @@ body {
  }
 
  /*
-* Game detail page
+* Game detail view
 */
+.gameDetailView {
+  margin: 15px;
+}
+
 .gameImage {
   float: left;
-  width: 15%;
+  width: 110%;
+  margin: 5px;
+}
+
+.gameDetail {
+  background-color: rgba( 200, 200, 200, 1);
+  margin: 5px;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.icon {
+  width: 100%;
+  float: left;
 }
