@@ -62,22 +62,6 @@
 
 </div>
 
-<div id="matches" ng-controller="gamesController">
-<h2 class="sub-header">Games</h2>
-    <!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-        <div ng-repeat="game in games track by $index" class="gameInstance">
-             <a href ng-click="show(game.id)">
-             <!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
-                <!-- <img src="img/thumb_{{game.image}}" class="gameImg" /> -->
-            
-            <div class="details">
-                <h3>{{game.name}}</h3>
-                <p class="year">{{game.publisher}}</p>
-            </div>
-            </a> 
-        </div>
-</div>
-
 <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
   <div ng-controller="filterController" ng-init="showAcordeon = 0">
     <div class="well" ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
@@ -109,28 +93,23 @@
 
   <h1 class="page-header">Games</h1>
 
-  <div class="row placeholders">
-      <div class="col-xs-6 col-sm-3 placeholder">
-       <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-       <h4>Label</h4>
-       <span class="text-muted">Something else</span>
-   </div>
-   <div class="col-xs-6 col-sm-3 placeholder">
-       <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-       <h4>Label</h4>
-       <span class="text-muted">Something else</span>
-   </div>
-   <div class="col-xs-6 col-sm-3 placeholder">
-       <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-       <h4>Label</h4>
-       <span class="text-muted">Something else</span>
-   </div>
-   <div class="col-xs-6 col-sm-3 placeholder">
-       <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-       <h4>Label</h4>
-       <span class="text-muted">Something else</span>
-   </div>
+  <div id="matches" ng-controller="gamesController">
+<h2 class="sub-header">Games</h2>
+    <!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
+        <div ng-repeat="game in games track by $index" class="gameInstance">
+             <a href ng-click="show(game.id)">
+             <!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
+                <!-- <img src="img/thumb_{{game.image}}" class="gameImg" /> -->
+            
+            <div class="details">
+                <h3>{{game.name}}</h3>
+                <p class="year">{{game.publisher}}</p>
+            </div>
+            </a> 
+        </div>
 </div>
+
+
 
 
 <div class="row">
