@@ -29,18 +29,19 @@
  <div class="row" >
   <div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar">
 
-   <div id="playersFilter" ng-controller="playersController">
+  <div id="playersFilter" ng-controller="playersController">
     <h3>Number of players</h3>
 
-    <button ng-click="numberOfPlayers = numberOfPlayers -1"  id="minusButton" class="btn btn-primary" type="button">
+    <button ng-click="decreasePlayers(numberOfPlayers - 1)"  id="minusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
  </button>
 
  <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
 
- <button ng-click="numberOfPlayers = numberOfPlayers +1" id="plusButton" class="btn btn-primary" type="button">
+ <button ng-click="increasePlayers(numberOfPlayers + 1)" id="plusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
  </button>
+ <div>this is playersFilter here: {{numberOfPlayers}}</div>
 </div><!-- end #playersFilter -->
 
 <div id="ageFilter" ng-controller="ageController">

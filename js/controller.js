@@ -2,11 +2,7 @@
 //create a module to oranize controllers
 var controllersModule = angular.module("ttmatchApp.Controllers", [])
 /* Controllers */
-/* Controller for the number of players */
-controllersModule.controller('playersController', function($scope) {
-    $scope.numberOfPlayers = 2;
-    console.log("numberOfPlayers in controller.js " + $scope.numberOfPlayers);
-});
+
 controllersModule.controller('gamesController', function($scope, $http, $location, gamesService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
@@ -30,6 +26,23 @@ controllersModule.controller('gamesController', function($scope, $http, $locatio
       $location.path(':'+ gameID);
     }
 });
+
+/* Controller for the number of players */
+controllersModule.controller('playersController', function($scope) {
+    $scope.numberOfPlayers = 2;
+    $scope.increasePlayers = function(players) {
+      $scope.numberOfPlayers = players;
+      console.log("I'm in increasePlayers");
+    }
+    $scope.decreasePlayers = function() {
+      if ($scope.numberOfPlayers > 0) {
+        $scope.numberOfPlayers--;
+      } else {
+        $scope.numberOfPlayers = 0;
+      }
+    }
+});
+
 /* Controller for the time filter*/
 controllersModule.controller('timeController', function($scope, $location) {
     $scope.timeLimit = {
