@@ -33,6 +33,16 @@ controllersModule.controller('ageController', function($scope, $location){
 controllersModule.controller('filterController', function($scope){
 	$scope.filterLimit = tagsToShow;
   	$scope.filter = game_tags;
+  	$scope.tagsInclude = [];
+    
+    $scope.includeTag = function(tag) {
+        var i = $.inArray(tag, $scope.tagsInclude);
+        if (i > -1) {
+            $scope.tagsInclude.splice(i, 1);
+        } else {
+            $scope.tagsInclude.push(tag);
+        }
+    }
 });
 
 controllersModule.controller('ratingController', function ($scope) {

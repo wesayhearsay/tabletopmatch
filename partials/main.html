@@ -69,7 +69,7 @@
        <div class="col-md-4" ng-repeat="currentKey in value | limitTo: limit">
         <div class="input-group ">
             <span class="">
-            <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" ></input>
+            <input type="checkbox" value="currentKey.name" ng-model="currentKey.selected" ng-click="includeTag(currentKey.name)" ></input>
             </span>
             <span class="">{{currentKey.name }}</span>
         </div>
@@ -84,6 +84,7 @@
     </div> <!-- .col-md-2 -->
 </div>
 </div>
+<!-- <div>{{tagsInclude}}</div> -->
 <div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">
     <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>HIDE FILTERS</div>
     <div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
