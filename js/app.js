@@ -13,6 +13,11 @@ ttmatch.config(['$routeProvider',
             templateUrl: 'partials/main.html',
             //controller: 'mainViewCtrl'
 
+        }).
+        when('/game', {
+            templateUrl: 'partials/gameDetail.html',
+            controller: 'ratingController'
+
         });
         // .
         // otherwise({

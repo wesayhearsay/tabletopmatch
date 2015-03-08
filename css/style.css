@@ -107,3 +107,27 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+/*Games */
+
+.gameInstance {
+
+     float: left;
+
+     margin: 0.5rem;
+
+ }
+
+ .gameImg {
+
+     margin-bottom: 0
+ }
+ .gameName{
+      font-size: 1em;
+
+     font-weight: normal;
+
+     line-height: 1em;
+
+     margin: 0.2em;
+ }
