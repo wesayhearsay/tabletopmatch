@@ -20,7 +20,7 @@
         "name": "Family game",
         "type": "category"
     }, {
-        "name": "Tile placement",
+        "name": "Tile placement",  
         "type": "mechanics"
     }, {
         "name": "Historical",
