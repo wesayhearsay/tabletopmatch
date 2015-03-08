@@ -131,3 +131,11 @@ body {
 
      margin: 0.2em;
  }
+
+ /*
+* Game detail page
+*/
+.gameImage {
+  float: left;
+  width: 15%;
+}
