@@ -1,6 +1,6 @@
 <div class="container-fluid gameDetailView">
-	<div class="row" ng-controller="ratingController">
-		<h1>Carcassonne (2000)</h1>
+	<div class="row" >
+		<h1>{{game.name}}</h1>
 		<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
 		<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
 		<hr />
@@ -8,7 +8,7 @@
 
 	<div class="row gameDetails">
 		<div class="col-md-1">
-			<img src="./img/thumb_1399400626-carcassonne.jpg" class="gameImage" />
+			<img src="./img/thumb_{{game.image}}" class="gameImage" />
 			<button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Add to my Library</button>
 		</div>
 		<div class="col-md-2">
@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-md-8">
 					<div class="row">Players:</div>
-					<div class="row">2-5</div>
+					<div class="row">{{game.min_players}}-{{game.max_players}}</div>
 				</div>
 			</div>
 			<div class="gameDetail">
@@ -27,7 +27,7 @@
 				</div>
 				<div class="col-md-8">
 					<div class="row">Setup:</div>
-					<div class="row">5 min</div>
+					<div class="row">{{game.preparation_time}}</div>
 				</div>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 				</div>
 				<div class="col-md-8">
 					<div class="row">Min-Age:</div>
-					<div class="row">3 Years</div>
+					<div class="row">{{game.min_age}}</div>
 				</div>
 			</div>
 			<div class="gameDetail">
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-md-8">
 					<div class="row">Play-Time:</div>
-					<div class="row">45 min</div>
+					<div class="row">{{game.duration}}</div>
 				</div>
 			</div>
 		</div>
