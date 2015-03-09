@@ -1,34 +1,37 @@
 'use strict';
 
 /*main module definition*/
-var ttmatch = angular.module("ttmatchApp", ["ngRoute", "ngTouch", "ui-rangeSlider",
+var ttmatch = angular.module("ttmatchApp", ["ui.router", "ngTouch", "ui-rangeSlider",
     "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters", "ui.bootstrap"]);
 
-// make the views change when the URL is changed aka router 
+ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/");
 
-ttmatch.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/', {
-            templateUrl: 'partials/main.html',
-            //controller: 'mainViewCtrl'
+    $stateProvider
+        .state("home",{
+            url: "/",
+            views: {
+                "header": {
+                    templateUrl: "partials/header.html",
+                    controller: "HeaderController"
+                },
+                "sidebar": {
+                    templateUrl: "partials/sidebar.html"
+                },
+                "content": {
+                    templateUrl: "partials/content.html",
+                    controller: "ContentController"
+                }
 
-        }).
-        when('/:gameId', {
-            templateUrl: 'partials/gameDetail.html',
-            controller: 'gameController'
-
+            }
+        })
+        .state('home.detail', {
+            url: 'detail/:id',
+            views: {
+                'content@': {
+                    templateUrl: "partials/gameDetails.html",
+                    controller: "GameController"
+                }
+            }
         });
-        // .
-        // otherwise({
-        //     redirectTo: '/'
-        // });
-    }
-]);
-ttmatch.config(['$httpProvider',function($httpProvider) {
-      //Enable cross domain calls
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-    }
-]);
+}]);

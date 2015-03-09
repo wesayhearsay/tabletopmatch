@@ -3,7 +3,10 @@
 var controllersModule = angular.module("ttmatchApp.Controllers", [])
 /* Controllers */
 
-controllersModule.controller('gamesController', function($scope, $http, $location, gamesService, filterService) {
+controllersModule.controller('HeaderController', function($scope) {
+    /* Controller Stuff */
+});
+controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     $scope.filterText = filterService.get();
@@ -23,27 +26,60 @@ controllersModule.controller('gamesController', function($scope, $http, $locatio
     }
     //if a game is pressed, it routs it to the game view
     $scope.show = function(gameID){
-      console.log(gameID);
-      $location.path(':'+ gameID);
+        console.log(gameID);
+        $location.path(':'+ gameID);
     }
-     $scope.tagFilter = function(game) {
+    $scope.tagFilter = function(game) {
         var shouldShow = false;
         if ($scope.filterText.length > 0) {
-	        for(var k=0; k<game.attributes.length; k++){    
-	            if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
-	                shouldShow = true;
-	                //return;
-	            }
-	        }
-	        if(shouldShow){
-        		return game;
-    		}else{
-    			return;
-    		}
-	    }
-        	return game;	
-    	}
+            for(var k=0; k<game.attributes.length; k++){    
+                if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
+                    shouldShow = true;
+                    //return;
+                }
+            }
+            if(shouldShow){
+                return game;
+            }else{
+                return;
+            }
+        }
+            return game;
+        }
+});
+controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService) {
+    //gets rid of the : character
+    var $id =  $stateParams.id;
 
+    
+    //checks if the games.json has ever been accessed before.
+    //this is done so that the json is not included every time the question is changed
+    if (!gamesService.isInitialized()) {
+        //if it hasn't been included before, an ajax call is made 
+        //towards the file that is contained in the same folder as index.html
+        $http.get("js/games.json").success(function(data) {
+            //the questionaire variable is set with the data gotten from the call
+            gamesService.set(data);
+            //if in the path there is an array that stands as a attrID (the question name)
+            $scope.game = gamesService.get($id);
+        }).
+        error(function() { //if an error occured, the console shows that the json wasn't included
+            console.log("json not included");
+        });
+    }
+    // in case the games has already been included, and there is an gameID in the route
+    if ($id && gamesService.isInitialized()) {
+        //the current scope gets the array that is associated with that particular question
+        $scope.game = gamesService.get($id);
+    }
+    $scope.rate = 7;
+    $scope.max = 10;
+    $scope.isReadonly = false;
+    $scope.hoveringOver = function(value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+   
 });
 
 /* Controller for the number of players */
