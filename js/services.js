@@ -35,9 +35,22 @@ serviceModule.service('filterService', function() {
         }
     };  
 });
+// service for the number of players
+serviceModule.service('playerService', function() {
+    var players = 2; // default
+    return {
+        get: function(){
+            return players;
+        },
+        set: function(value){
+            players = value;
+        }
+    };  
+});
+
 // service for the age filtering
 serviceModule.service('ageService', function() {
-    var age = 16;
+    var age = 16; // default age
     return {
         get: function(){
             return age;
@@ -50,8 +63,8 @@ serviceModule.service('ageService', function() {
 // service for the time filtering
 serviceModule.service('timeService', function() {
     var time = {
-        min: 20,
-        max: 120,
+        min: 20, // default min time to play
+        max: 120, // default max time to play
     };
     return {
         get: function(){

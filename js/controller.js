@@ -8,21 +8,23 @@ controllersModule.controller('HeaderController', function($scope) {
 });
 
 /* Controller for the filters in the sidebar */
-controllersModule.controller('sidebarController', function($scope, ageService, timeService) {
+controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService) {
+    
     // number of players filter
-    $scope.numberOfPlayers = 2; // default players
+    $scope.numberOfPlayers = playerService.get(); // default players
     $scope.increasePlayers = function() {
-      $scope.numberOfPlayers++;
-      console.log("I'm in increasePlayers");
+      $scope.numberOfPlayers = $scope.numberOfPlayers + 1;
+      playerService.set($scope.numberOfPlayers);
+      //console.log("I'm in increasePlayers");
     }
     $scope.decreasePlayers = function() {
-      if ($scope.numberOfPlayers > 1) {
-        $scope.numberOfPlayers--; // decrease until 1
+      if ($scope.numberOfPlayers > 1) { // decrease until 1
+        $scope.numberOfPlayers = $scope.numberOfPlayers - 1;
       } else {
         $scope.numberOfPlayers = 1; // 1 is the minimum player number
       }
+        playerService.set($scope.numberOfPlayers); 
     }
-
 
     // minimum age filter
     $scope.ageLimit = {
@@ -58,7 +60,7 @@ controllersModule.controller('sidebarController', function($scope, ageService, t
     }
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, ageService, timeService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     $scope.filterText = filterService.get();
@@ -97,6 +99,18 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
             }
         }
             return game;
+    }
+
+    // filter games based on the number of players
+    $scope.playerFiltering = function (game) {
+        $scope.playerInclude = playerService.get(); // get number of players
+        //console.log("$scope.playerInclude " + $scope.playerInclude);
+        if (game.min_players <= $scope.playerInclude && game.max_players >= $scope.playerInclude) { // if game fits criteria
+            return game;
+        } else {
+            return; // no game returned
+        }
+        return game;
     }
 
     // filter games based on the minimum age
