@@ -16,7 +16,7 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
                     controller: "HeaderController"
                 },
                 "sidebar": {
-                    templateUrl: "partials/sidebar.html"
+                    templateUrl: "partials/sidebarFilter.html"
                 },
                 "content": {
                     templateUrl: "partials/content.html",
@@ -31,6 +31,10 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
                 'content@': {
                     templateUrl: "partials/gameDetails.html",
                     controller: "GameController"
+                },
+                'sidebar@': {
+                    templateUrl: "partials/sidebarLibrary.html",
+                    
                 }
             }
         });
