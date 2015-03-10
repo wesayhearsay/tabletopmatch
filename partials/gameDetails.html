@@ -1,5 +1,5 @@
-<div class="gameDetailView">
-	<div class="row" >
+<div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 ">
+	<div class=main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 "row" >
 		<h1>{{game.name}}</h1>
 		<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
 		<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
@@ -51,14 +51,12 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
 	<div class="row gameAttributes">
 		<div class="row">
 			<h4>Type</h4>
 		</div>
 		<div class="row">
-			<div>
 		</div>
-	</div>
-</div>
+	</div><!-- end .gameAttributes -->
+</div><!-- end .row.gameDetails -->
+</div><!-- end .main -->
