@@ -1,6 +1,6 @@
-<div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar">
+<div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar" ng-controller="sidebarController">
 
-  <div id="playersFilter" ng-controller="playersController">
+  <div id="playersFilter" >
     <h3>Number of players</h3>
 
     <button ng-click="decreasePlayers(numberOfPlayers - 1)"  id="minusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
@@ -15,13 +15,13 @@
  <div>this is playersFilter here: {{numberOfPlayers}}</div>
 </div><!-- end #playersFilter -->
 
-<div id="ageFilter" ng-controller="ageController">
+<div id="ageFilter" >
   <h3>Minimum age</h3>    
   <div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="max" step="2" attach-handle-values="true" ng-mousemove="includeAge(ageLimit.userMin)" ng-model="ageLimit" ></div>
   <div>this is ageFilter here: {{ageFilter}}</div>
 </div>
 
-<div id="timeFilter" ng-controller="timeController">
+<div id="timeFilter">
  <h3>Time</h3>
  <div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit"></div>
 
