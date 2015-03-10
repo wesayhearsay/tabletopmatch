@@ -1,4 +1,4 @@
-<div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 ">
+<div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 ">
 	<div ng-controller="filterController" ng-init="showAcordeon = 0">
 		<div class="well" ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
 			<div class="row" ng-init="limit = filterLimit">
@@ -22,30 +22,29 @@
 				</div> <!-- .col-md-2 -->
 			</div>
 		</div>
-	<!-- <div>{{tagsInclude}}</div> -->
-	<div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">
-		<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-		HIDE FILTERS
-	</div>
-	<div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
-		<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-		SHOW FILTERS
-	</div>
+		<!-- <div>{{tagsInclude}}</div> -->
+		<div ng-hide="showAcordeon===0" ng-click="showAcordeon = 0">
+			<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+			HIDE FILTERS
+		</div>
+		<div ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
+			<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+			SHOW FILTERS
+		</div>
 	</div><!-- end ng-controller -->
-<h1 class="page-header">Games</h1>
+	<h1 class="page-header">Games</h1>
 
-<div id="matches">
-	<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-	<div ng-repeat="game in games | filter:tagFilter" class="gameInstance col-xs-6 col-sm-4 s col-md-3 col-lg-2">
-		<a href ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
-			<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
-			<img src="img/thumb_{{game.image}}" class="gameImg" />
-			<div class="details">
-				<p class="gameName">{{game.name}}</p>
-				<p class="year">{{game.published}}</p>
-			</div>
-		</a> 
-	</div><!-- end .gameInstance -->
-</div><!-- end #matches -->
+	<div id="matches">
+		<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
+		<div ng-repeat="game in games | filter:tagFilter" class="gameInstance col-xs-6 col-sm-4 s col-md-3 col-lg-2">
+			<a href ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
+				<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
+				<img src="img/thumb_{{game.image}}" class="gameImg" />
+				<div class="details">
+					<p class="gameName">{{game.name}}</p>
+					<p class="year">{{game.published}}</p>
+				</div>
+			</a> 
+		</div><!-- end .gameInstance -->
+	</div><!-- end #matches -->
 </div><!-- end .main -->
-
