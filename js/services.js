@@ -33,5 +33,17 @@ serviceModule.service('filterService', function() {
         set: function(value){
             filterTags = value;
         }
-    };
+    };  
+});
+
+serviceModule.service('ageService', function() {
+    var age = 16;
+    return {
+        get: function(){
+            return age;
+        },
+        set: function(value){
+            age = value;
+        }
+    };  
 });
