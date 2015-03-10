@@ -1,10 +1,8 @@
 <div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 ">
-	<div class=main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 "row" >
 		<h1>{{game.name}}</h1>
 		<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
 		<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
 		<hr />
-	</div>
 
 	<div class="row gameDetails">
 		<div class="col-md-2">
