@@ -1,31 +1,37 @@
-<div id="sidebarFilters" class="col-sm-3 col-md-3 sidebar" ng-controller="sidebarController">
+<div id="sidebarFilters" class="col-sm-3 col-md-3 col-lg-3 sidebar" ng-controller="sidebarController">
 
-  <div id="playersFilter" >
-    <h3>Number of players</h3>
+	<div id="playersFilter" >
+		<h3>Number of players</h3>
 
-    <button ng-click="decreasePlayers(numberOfPlayers - 1)"  id="minusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
-     <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
- </button>
+		<button ng-click="decreasePlayers()"  id="minusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
+			<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+		</button>
 
- <span id="numberOfPlayers">{{ numberOfPlayers }}</span>
+		<span id="numberOfPlayers">{{ numberOfPlayers }}</span>
 
- <button ng-click="increasePlayers(numberOfPlayers + 1)" id="plusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
-     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
- </button>
- <div>this is playersFilter here: {{numberOfPlayers}}</div>
-</div><!-- end #playersFilter -->
+		<button ng-click="increasePlayers()" id="plusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</button>
+		<!-- <div>this is playersFilter here: {{numberOfPlayers}}</div> -->
+	</div><!-- end #playersFilter -->
 
-<div id="ageFilter" >
-  <h3>Minimum age</h3>    
-  <div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="max" step="2" attach-handle-values="true" ng-mousemove="includeAge(ageLimit.userMin)" ng-model="ageLimit" ></div>
-  <div>this is ageFilter here: {{ageFilter}}</div>
-</div>
+	<div id="ageFilter" >
+		<h3>Minimum age</h3>    
+		<div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="max" step="2" attach-handle-values="true" ng-mousemove="includeAge(ageLimit.userMin)" ng-model="ageLimit" ></div>
+		<!-- <div>this is ageFilter here: {{ageFilter}}</div> -->
+	</div> <!-- end #ageFilter -->
 
-<div id="timeFilter">
- <h3>Time</h3>
- <div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit"></div>
+	<div id="timeFilter">
+		<h3>Time</h3>
+		<div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit"></div>
 
-<div>this is timeFilter here: {{timeFilter}}</div>
+		<!-- <div>this is timeFilter here: {{timeFilter}}</div> -->
+	</div><!-- end #timeFilter -->
 
-</div>
-</div>
+	<div id="complexityFilter">
+		<h3>Complexity</h3>
+		<button class="btn btn-default" type="submit">Easy</button>
+		<button class="btn btn-default" type="submit">Medium</button>
+		<button class="btn btn-default" type="submit">Difficult</button>
+	</div><!-- end #complexityFilter -->
+</div><!--  end #sidebarFilters -->

@@ -46,6 +46,8 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         }
             return game;
         }
+
+        
 });
 controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService) {
     //gets rid of the : character
@@ -85,16 +87,16 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
 /* Controller for the filters in the sidebar */
 controllersModule.controller('sidebarController', function($scope) {
     // number of players filter
-    $scope.numberOfPlayers = 2;
-    $scope.increasePlayers = function(players) {
-      $scope.numberOfPlayers = players;
+    $scope.numberOfPlayers = 2; // default players
+    $scope.increasePlayers = function() {
+      $scope.numberOfPlayers++;
       console.log("I'm in increasePlayers");
     }
     $scope.decreasePlayers = function() {
-      if ($scope.numberOfPlayers > 0) {
-        $scope.numberOfPlayers--;
+      if ($scope.numberOfPlayers > 1) {
+        $scope.numberOfPlayers--; // decrease until 1
       } else {
-        $scope.numberOfPlayers = 0;
+        $scope.numberOfPlayers = 1; // 1 is the minimum player number
       }
     }
     // minimum age filter
