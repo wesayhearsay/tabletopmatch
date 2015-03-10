@@ -8,7 +8,7 @@ controllersModule.controller('HeaderController', function($scope) {
 });
 
 /* Controller for the filters in the sidebar */
-controllersModule.controller('sidebarController', function($scope, ageService) {
+controllersModule.controller('sidebarController', function($scope, ageService, timeService) {
     // number of players filter
     $scope.numberOfPlayers = 2; // default players
     $scope.increasePlayers = function() {
@@ -49,15 +49,16 @@ controllersModule.controller('sidebarController', function($scope, ageService) {
         userMin: 20,
         userMax: 120,
     };
-    $scope.timeFilter = [0, 0];
-    console.log("$scope.timeFilter in controller.js " + $scope.timeFilter);
+    $scope.timeFilter = timeService.get();
     $scope.includeTime = function(timeMin, timeMax) {
-        $scope.timeFilter[0] = timeMin;
-        $scope.timeFilter[1] = timeMax;
+        $scope.timeFilter = timeService.get();
+        $scope.timeFilter.min = timeMin;
+        $scope.timeFilter.max = timeMax;
+        timeService.set($scope.timeFilter.min, $scope.timeFilter.max);
     }
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, ageService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, ageService, timeService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     $scope.filterText = filterService.get();
@@ -98,23 +99,35 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
             return game;
     }
 
+    // filter games based on the minimum age
     $scope.ageFiltering = function (game) {
-        $scope.ageFilter = ageService.get();
+        $scope.ageFilter = ageService.get(); // get default age from service
         // console.log("game in ageFiltering() " + game);
         // console.log("game.min_age in ageFiltering() " + game.min_age);
         // console.log("scope.ageFilter in ageFiltering()" + $scope.ageFilter);
-        if (game.min_age >= $scope.ageFilter) {
+        if (game.min_age >= $scope.ageFilter) { // if the game's minimum age fits the criteria
             //console.log("true game.min_age");
             return game;
         } else {
             //console.log("false");
-            return;
+            return; // no game returned
         }
         return game;
     }
-    
 
+    // filter games based on the duration
+    $scope.timeFiltering = function (game) {
+        $scope.timeInclude = timeService.get(); // get min time to play
+        console.log("$scope.timeInclude in timeFiltering "+ $scope.timeInclude);
+        if (game.duration >= $scope.timeInclude.min && game.duration <= $scope.timeInclude.max) { // if game fits criteria
+            return game;
+        } else {
+            return; // no game returned
+        }
+        return game;
+    }
 });
+
 controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService) {
     //gets rid of the : character
     var $id =  $stateParams.id;

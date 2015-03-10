@@ -35,7 +35,7 @@ serviceModule.service('filterService', function() {
         }
     };  
 });
-
+// service for the age filtering
 serviceModule.service('ageService', function() {
     var age = 16;
     return {
@@ -44,6 +44,22 @@ serviceModule.service('ageService', function() {
         },
         set: function(value){
             age = value;
+        }
+    };  
+});
+// service for the time filtering
+serviceModule.service('timeService', function() {
+    var time = {
+        min: 20,
+        max: 120,
+    };
+    return {
+        get: function(){
+            return time;
+        },
+        set: function(inputMin, inputMax){
+            time.min = inputMin;
+            time.max = inputMax;
         }
     };  
 });
