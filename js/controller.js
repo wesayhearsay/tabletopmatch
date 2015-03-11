@@ -8,7 +8,7 @@ controllersModule.controller('HeaderController', function($scope) {
 });
 
 /* Controller for the filters in the sidebar */
-controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService) {
+controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService, complexityService) {
     
     // number of players filter
     $scope.numberOfPlayers = playerService.get(); // default players
@@ -30,7 +30,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
     $scope.ageLimit = {
         min: 2,
         max: 18,
-        userMin: 16,
+        userMin: 4,
         userMax: 18
     };
 
@@ -42,7 +42,6 @@ controllersModule.controller('sidebarController', function($scope, playerService
         //console.log("this is minAge in includeAge() " + minAge);
         //console.log("$scope.ageInclude in includeAge() " + $scope.ageInclude);
     }
-
 
     // time to play filter
     $scope.timeLimit = {
@@ -58,9 +57,17 @@ controllersModule.controller('sidebarController', function($scope, playerService
         $scope.timeFilter.max = timeMax;
         timeService.set($scope.timeFilter.min, $scope.timeFilter.max);
     }
+
+    // complexity filter
+    $scope.includeComplexity = function (complexity) {
+        $scope.complexityFilter = complexityService.get();
+        $scope.complexityFilter = complexity;
+        console.log("$scope.complexityFilter in includeComplexity " + $scope.complexityFilter);
+        complexityService.set($scope.complexityFilter);  
+    }
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService, complexityService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     $scope.filterText = filterService.get();
@@ -134,6 +141,17 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         $scope.timeInclude = timeService.get(); // get min time to play
         console.log("$scope.timeInclude in timeFiltering "+ $scope.timeInclude);
         if (game.duration >= $scope.timeInclude.min && game.duration <= $scope.timeInclude.max) { // if game fits criteria
+            return game;
+        } else {
+            return; // no game returned
+        }
+        return game;
+    }
+
+        // filter games based on the complexity
+    $scope.complexityFiltering = function (game) {
+        $scope.complexityInclude = complexityService.get(); // get selected complexity
+        if (game.complexity == $scope.complexityInclude) { // if game fits criteria
             return game;
         } else {
             return; // no game returned

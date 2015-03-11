@@ -30,8 +30,10 @@
 
 	<div id="complexityFilter">
 		<h3>Complexity</h3>
-		<button class="btn btn-default" type="submit">Easy</button>
-		<button class="btn btn-default" type="submit">Medium</button>
-		<button class="btn btn-default" type="submit">Difficult</button>
+		<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+      		<a href="#" class="btn btn-default" role="button" ng-click="includeComplexity(1)">Easy</a>
+      		<a href="#" class="btn btn-default active" role="button" ng-click="includeComplexity(2)">Medium</a>
+      		<a href="#" class="btn btn-default" role="button" ng-click="includeComplexity(3)">Difficult</a>
+    	</div><!-- end btn-group -->
 	</div><!-- end #complexityFilter -->
 </div><!--  end #sidebarFilters -->

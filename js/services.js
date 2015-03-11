@@ -50,7 +50,7 @@ serviceModule.service('playerService', function() {
 
 // service for the age filtering
 serviceModule.service('ageService', function() {
-    var age = 16; // default age
+    var age = 4; // default age
     return {
         get: function(){
             return age;
@@ -75,4 +75,17 @@ serviceModule.service('timeService', function() {
             time.max = inputMax;
         }
     };  
+});
+
+// service for the complexity filtering
+serviceModule.service('complexityService', function() {
+    var complexity = 2; // default complexity medium
+    return {
+        get: function(){
+            return complexity;
+        },
+        set: function(value){
+            complexity = value;
+        }
+    }; 
 });

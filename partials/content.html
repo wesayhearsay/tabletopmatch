@@ -36,7 +36,7 @@
 
 	<div id="matches">
 		<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-		<div ng-repeat="game in games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering" class="gameInstance col-xs-6 col-sm-4 s col-md-3 col-lg-2">
+		<div ng-repeat="game in games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering | filter:complexityFiltering" class="gameInstance col-xs-6 col-sm-4 s col-md-3 col-lg-2">
 			<a href ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
 				<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
 				<img src="img/thumb_{{game.image}}" class="gameImg" />
