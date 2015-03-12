@@ -151,7 +151,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         // filter games based on the complexity
     $scope.complexityFiltering = function (game) {
         $scope.complexityInclude = complexityService.get(); // get selected complexity
-        if (game.complexity < 3) { // complexity 1 (easy) or 2 (medium)
+        if ($scope.complexityInclude < 3) { // complexity 1 (easy) or 2 (medium)
             if (game.complexity == $scope.complexityInclude) { // if game fits criteria
                 return game;
             } else {
