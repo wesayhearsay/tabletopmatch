@@ -3,7 +3,7 @@
 	<div id="playersFilter" >
 		<h3>Number of players</h3>
 
-		<div range-slider min="playerLimit.min" model-min="playerLimit.userMin" max="playerLimit.max" model-max="playerLimit.userMax" pin-handle="min" step="1" attach-handle-values="true" ng-click="includePlayers(playerLimit.userMax)" ng-model="playerLimit" ></div>
+		<div range-slider min="playerLimit.min " model-min="playerLimit.userMin" max="playerLimit.max" model-max="playerLimit.userMax" pin-handle="min" step="1" attach-handle-values="true" ng-click="includePlayers(playerLimit.userMax)" ng-model="playerLimit" ></div>
 	</div><!-- end #playersFilter -->
 
 	<div id="ageFilter" >
@@ -14,7 +14,7 @@
 
 	<div id="timeFilter">
 		<h3>Time</h3>
-		<div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit"></div>
+		<div range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit" filter="timeFilter"></div>
 
 		<!-- <div>this is timeFilter here: {{timeFilter}}</div> -->
 	</div><!-- end #timeFilter -->
