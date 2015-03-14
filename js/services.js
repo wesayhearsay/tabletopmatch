@@ -37,7 +37,7 @@ serviceModule.service('filterService', function() {
 });
 // service for the number of players
 serviceModule.service('playerService', function() {
-    var players = 2; // default
+    var players = 6; // default
     return {
         get: function(){
             return players;

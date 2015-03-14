@@ -9,21 +9,22 @@ controllersModule.controller('HeaderController', function($scope) {
 
 /* Controller for the filters in the sidebar */
 controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService, complexityService) {
-    
+
     // number of players filter
-    $scope.numberOfPlayers = playerService.get(); // default players
-    $scope.increasePlayers = function() {
-      $scope.numberOfPlayers = $scope.numberOfPlayers + 1;
-      playerService.set($scope.numberOfPlayers);
-      //console.log("I'm in increasePlayers");
-    }
-    $scope.decreasePlayers = function() {
-      if ($scope.numberOfPlayers > 1) { // decrease until 1
-        $scope.numberOfPlayers = $scope.numberOfPlayers - 1;
-      } else {
-        $scope.numberOfPlayers = 1; // 1 is the minimum player number
-      }
-        playerService.set($scope.numberOfPlayers); 
+    $scope.playerLimit = {
+        min: 1,
+        max: 30,
+        userMin: 1,
+        userMax: 6
+    };
+
+    $scope.numberOfPlayers = playerService.get(); // default number of players
+    $scope.includePlayers = function(number) {
+        //$scope.numberOfPlayers = playerService.get();
+        $scope.numberOfPlayers = number;
+        playerService.set($scope.numberOfPlayers);
+        //console.log("this is minAge in includeAge() " + minAge);
+        //console.log("$scope.ageInclude in includeAge() " + $scope.ageInclude);
     }
 
     // minimum age filter
@@ -61,7 +62,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
     $scope.easyClass;
     $scope.mediumClass;
     $scope.complexClass;
-    $scope.allClass = "active";
+    $scope.allClass = "active"; // default
     // complexity filter
     $scope.includeComplexity = function (complexity) {
         $scope.complexityFilter = complexityService.get();
@@ -69,6 +70,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
         console.log("$scope.complexityFilter in includeComplexity " + $scope.complexityFilter);
         complexityService.set($scope.complexityFilter); 
 
+        // unelegant solution to change the active class, but it was quick
         switch (complexity) {
             case 0:
                 $scope.easyClass = "";

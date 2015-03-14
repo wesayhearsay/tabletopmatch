@@ -3,16 +3,7 @@
 	<div id="playersFilter" >
 		<h3>Number of players</h3>
 
-		<button ng-click="decreasePlayers()"  id="minusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
-			<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-		</button>
-
-		<span id="numberOfPlayers">{{ numberOfPlayers }}</span>
-
-		<button ng-click="increasePlayers()" id="plusButton" class="btn btn-primary" type="button" ng-model="numberOfPlayers">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-		</button>
-		<!-- <div>this is playersFilter here: {{numberOfPlayers}}</div> -->
+		<div range-slider min="playerLimit.min" model-min="playerLimit.userMin" max="playerLimit.max" model-max="playerLimit.userMax" pin-handle="min" step="1" attach-handle-values="true" ng-click="includePlayers(playerLimit.userMax)" ng-model="playerLimit" ></div>
 	</div><!-- end #playersFilter -->
 
 	<div id="ageFilter" >
