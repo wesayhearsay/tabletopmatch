@@ -252,6 +252,10 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
         $scope.overStar = value;
         $scope.percent = 100 * (value / $scope.max);
     };
+
+    $scope.addToLibrary = function(game.id){
+        
+    }
    
 });
 
