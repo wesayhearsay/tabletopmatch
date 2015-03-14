@@ -7,7 +7,7 @@
 	<div class="row gameDetails">
 		<div class="col-md-2">
 			<img src="./img/thumb_{{game.image}}" class="gameImage" />
-			<button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Add to my Library</button>
+			<button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id)">Add to my Library</button>
 		</div>
 		<div class="col-md-3">
 			<div class="gameDetail">
