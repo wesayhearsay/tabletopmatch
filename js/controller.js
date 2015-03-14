@@ -30,8 +30,8 @@ controllersModule.controller('sidebarController', function($scope, playerService
     $scope.ageLimit = {
         min: 2,
         max: 18,
-        userMin: 4,
-        userMax: 18
+        userMin: 2,
+        userMax: 12
     };
 
     $scope.ageInclude = ageService.get();
@@ -126,7 +126,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         // console.log("game in ageFiltering() " + game);
         // console.log("game.min_age in ageFiltering() " + game.min_age);
         // console.log("scope.ageFilter in ageFiltering()" + $scope.ageFilter);
-        if (game.min_age >= $scope.ageFilter) { // if the game's minimum age fits the criteria
+        if (game.min_age <= $scope.ageFilter) { // if the game's minimum age fits the criteria
             //console.log("true game.min_age");
             return game;
         } else {

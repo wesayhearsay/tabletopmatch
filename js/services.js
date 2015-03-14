@@ -50,7 +50,7 @@ serviceModule.service('playerService', function() {
 
 // service for the age filtering
 serviceModule.service('ageService', function() {
-    var age = 4; // default age
+    var age = 12; // default age
     return {
         get: function(){
             return age;
