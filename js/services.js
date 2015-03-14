@@ -79,7 +79,7 @@ serviceModule.service('timeService', function() {
 
 // service for the complexity filtering
 serviceModule.service('complexityService', function() {
-    var complexity = 2; // default complexity medium
+    var complexity = 0; // default complexity medium
     return {
         get: function(){
             return complexity;

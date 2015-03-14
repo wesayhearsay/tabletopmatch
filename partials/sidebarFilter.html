@@ -17,7 +17,7 @@
 
 	<div id="ageFilter" >
 		<h3>Minimum age</h3>    
-		<div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="min" step="2" attach-handle-values="true" ng-mousemove="includeAge(ageLimit.userMax)" ng-model="ageLimit" ></div>
+		<div range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="min" step="2" attach-handle-values="true" ng-click="includeAge(ageLimit.userMax)" ng-model="ageLimit" ></div>
 		<!-- <div>this is ageFilter here: {{ageFilter}}</div> -->
 	</div> <!-- end #ageFilter -->
 
@@ -31,9 +31,10 @@
 	<div id="complexityFilter">
 		<h3>Complexity</h3>
 		<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-      		<a href="#" class="btn btn-default" role="button" ng-click="includeComplexity(1)">Easy</a>
-      		<a href="#" class="btn btn-default active" role="button" ng-click="includeComplexity(2)">Medium</a>
-      		<a href="#" class="btn btn-default" role="button" ng-click="includeComplexity(3)">Difficult</a>
+      		<a href="#" class="btn btn-default {{easyClass}}" role="button" ng-click="includeComplexity(1)">Easy</a>
+      		<a href="#" class="btn btn-default {{mediumClass}}" role="button" ng-click="includeComplexity(2)">Medium</a>
+      		<a href="#" class="btn btn-default {{complexClass}}" role="button" ng-click="includeComplexity(3)">Difficult</a>
+      		<a href="#" class="btn btn-default {{allClass}}" role="button" ng-click="includeComplexity(0)">All</a>
     	</div><!-- end btn-group -->
 	</div><!-- end #complexityFilter -->
 </div><!--  end #sidebarFilters -->

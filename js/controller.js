@@ -58,12 +58,43 @@ controllersModule.controller('sidebarController', function($scope, playerService
         timeService.set($scope.timeFilter.min, $scope.timeFilter.max);
     }
 
+    $scope.easyClass;
+    $scope.mediumClass;
+    $scope.complexClass;
+    $scope.allClass = "active";
     // complexity filter
     $scope.includeComplexity = function (complexity) {
         $scope.complexityFilter = complexityService.get();
         $scope.complexityFilter = complexity;
         console.log("$scope.complexityFilter in includeComplexity " + $scope.complexityFilter);
-        complexityService.set($scope.complexityFilter);  
+        complexityService.set($scope.complexityFilter); 
+
+        switch (complexity) {
+            case 0:
+                $scope.easyClass = "";
+                $scope.mediumClass = "";
+                $scope.complexClass = "";
+                $scope.allClass = "active";
+                break;
+            case 1:
+                $scope.easyClass = "active";
+                $scope.mediumClass = "";
+                $scope.complexClass = "";
+                $scope.allClass = "";
+                break;
+            case 2:
+                $scope.easyClass = "";
+                $scope.mediumClass = "active";
+                $scope.complexClass = "";
+                $scope.allClass = "";
+                break;
+            case 3:
+                $scope.easyClass = "";
+                $scope.mediumClass = "";
+                $scope.complexClass = "active";
+                $scope.allClass = "";
+                break;
+        }
     }
 });
 
@@ -148,21 +179,42 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         return game;
     }
 
+
+
         // filter games based on the complexity
     $scope.complexityFiltering = function (game) {
         $scope.complexityInclude = complexityService.get(); // get selected complexity
-        if ($scope.complexityInclude < 3) { // complexity 1 (easy) or 2 (medium)
-            if (game.complexity == $scope.complexityInclude) { // if game fits criteria
-                return game;
-            } else {
-                return; // no game returned
-            }
-        } else { // complexity 3 (complex) (but we also need to include 4 from the databse)
-            if (game.complexity >= $scope.complexityInclude) { // game is complex (either 3 or 4)
-                return game;
-            } else {
-                return; // no game returned
-            }
+
+        switch($scope.complexityInclude) {
+            case 1: // easy, game.complexity = 1
+                if (game.complexity == $scope.complexityInclude) { // if game fits criteria
+                    return game;
+                } else {
+                    return; // no game returned
+                }
+                break;
+            case 2: // medium; game.complexity = 2
+                if (game.complexity == $scope.complexityInclude) { // if game fits criteria
+                    return game;
+                } else {
+                    return; // no game returned
+                }
+            case 3: // complex; game.complexity = 3
+                if (game.complexity == $scope.complexityInclude || game.complexity == $scope.complexityInclude + 1) { // game is complex (either 3 or 4)
+                    return game;
+                } else {
+                    return; // no game returned
+                }
+            case 4: // complex; game.complexity = 3
+                if (game.complexity == $scope.complexityInclude || game.complexity == $scope.complexityInclude - 1) { // game is complex (either 3 or 4)
+                    return game;
+                } else {
+                    return; // no game returned
+                }
+                break;
+            default: // no complexity selected
+                return game; // return all games
+                break;
         }
         return game;
     }
