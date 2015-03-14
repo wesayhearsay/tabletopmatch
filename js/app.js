@@ -30,7 +30,8 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
             url: "profile",
             views: {
                 "sidebar@": {
-                    templateUrl: "partials/sidebarProfile.html"
+                    templateUrl: "partials/sidebarProfile.html",
+                    controller: "userLibrary"
                     
                 },
                 "content@": {

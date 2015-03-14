@@ -312,3 +312,16 @@ controllersModule.controller('gameController', function($scope, $http, $routePar
     };
    
 });
+
+controllersModule.controller('userLibrary', function($scope, $http) {
+
+ $http.get("js/user.json").success(function(data) {
+           
+            $scope.user = data;
+            console.log($scope.user)
+        }).
+        error(function() { //if an error occured, the console shows that the json wasn't included
+            console.log("json not included");
+        });
+    
+});
