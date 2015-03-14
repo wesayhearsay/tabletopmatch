@@ -26,6 +26,20 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
 
             }
         })
+        .state("home.profile",{
+            url: "profile",
+            views: {
+                "sidebar@": {
+                    templateUrl: "partials/sidebarProfile.html"
+                    
+                },
+                "content@": {
+                    templateUrl: "partials/library.html"
+                   
+                }
+
+            }
+        })
         .state('home.detail', {
             url: 'detail/:id',
             views: {
