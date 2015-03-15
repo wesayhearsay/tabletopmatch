@@ -50,10 +50,35 @@
 			</div>
 		</div>
 	<div class="row gameAttributes">
-		<div class="row">
-			<h4>Type</h4>
-		</div>
-		<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<hr />
+				<h4>Type</h4>
+				<div ng-repeat="attribute in game.attributes | filter:{type: 'type'}">
+					{{attribute.name}}
+				</div>
+			</div>
+			<div class="row">
+				<hr />
+				<h4>Category</h4>
+				<div ng-repeat="attribute in game.attributes | filter:{type: 'category'}">
+					{{attribute.name}}
+				</div>
+			</div>
+			<div class="row">
+				<hr />
+				<h4>Mechanics</h4>
+				<div ng-repeat="attribute in game.attributes | filter:{type: 'mechanics'}">
+					{{attribute.name}}
+				</div>
+			</div>
+			<div class="row">
+				<hr />
+				<h4>Theme</h4>
+				<div ng-repeat="attribute in game.attributes | filter:{type: 'theme'}">
+					{{attribute.name}}
+				</div>
+			</div>
 		</div>
 	</div><!-- end .gameAttributes -->
 </div><!-- end .row.gameDetails -->
