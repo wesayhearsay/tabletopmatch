@@ -45,12 +45,12 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
             url: 'detail/:id',
             views: {
                 'content@': {
-                    templateUrl: "partials/gameDetails.html",
+                    templateUrl: "partials/contentGameDetails.html",
                     controller: "GameController"
                 },
                 'sidebar@': {
-                    templateUrl: "partials/sidebarLibrary.html",
-                    
+                    templateUrl: "partials/sidebarGameDetails.html",
+                    controller: "GameController"
                 }
             }
         });
