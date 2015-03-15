@@ -63,7 +63,7 @@ serviceModule.service('ageService', function() {
 // service for the time filtering
 serviceModule.service('timeService', function() {
     var time = {
-        min: 20, // default min time to play
+        min: 10, // default min time to play
         max: 120, // default max time to play
     };
     return {

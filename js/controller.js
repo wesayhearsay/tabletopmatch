@@ -48,7 +48,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
     $scope.timeLimit = {
         min: 10,
         max: 360,
-        userMin: 20,
+        userMin: 10,
         userMax: 120,
     };
     $scope.timeFilter = timeService.get();
