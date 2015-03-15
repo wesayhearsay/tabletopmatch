@@ -100,7 +100,6 @@ serviceModule.service('questionsService', function() {
         set: function(numberOfQuestion){
             var tagsToAdd = questions[numberOfQuestion].tags;
             tagsForFilter = tagsForFilter.concat(tagsToAdd);
-            console.log(tagsForFilter)
         }
     }; 
 });

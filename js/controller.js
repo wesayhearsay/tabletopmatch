@@ -109,7 +109,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
     }
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService, complexityService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService, complexityService, questionsService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     if (!gamesService.isInitialized()) {
@@ -133,8 +133,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     }
 
     // accordion tag filtering
-    $scope.filterText = filterService.get();
+    
     $scope.tagFilter = function(game) {
+        $scope.filterText = questionsService.get();
         var shouldShow = false;
         if ($scope.filterText.length > 0) {
             for(var k=0; k<game.attributes.length; k++){    
