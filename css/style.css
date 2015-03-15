@@ -9,6 +9,7 @@
  /* Move down content because we have a fixed navbar that is 50px tall */
  body {
   padding-top: 50px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 
@@ -43,7 +44,7 @@
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 51px;
+    top: 50px;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -61,6 +62,34 @@
 }
 .sidebar-filter:last-child {
     border: none;
+}
+.sidebar-filter:first-child {
+    padding-top: 0;
+}
+
+.sidebar-heading {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin: 10px;
+}
+
+.complexity-icon {
+    fill: #ffffff;
+    margin: 20px 0;
+}
+.complexity-link.active {
+    color: #EB7B59;
+    fill: #EB7B59;
+}
+.complexity-link {
+    margin: 0 auto;
+    color: #ffffff;
+    text-align: center;
+}
+
+.complexity-link:hover {
+    color: #EB7B59;
+    fill: #EB7B59;
 }
 
 /* Sidebar navigation */
@@ -353,8 +382,9 @@
       top: 100%;
       left: 0;
       padding: 5px 0 0 0;
-      font-size: 12px;
-      color: #999;
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: #e5e5e5;
   }
   /* line 145, scss/_rangeSlider.scss */
   .ngrs-range-slider .ngrs-value.ngrs-value-max {
@@ -364,7 +394,7 @@
   }
   /* line 152, scss/_rangeSlider.scss */
   .ngrs-range-slider.ngrs-handle-min-down .ngrs-value-min, .ngrs-range-slider.ngrs-handle-max-down .ngrs-value-max {
-      color: #333;
+      color: #a5a5a5;
   }
   /* line 160, scss/_rangeSlider.scss */
   .ngrs-range-slider .ngrs-attached-handles {
