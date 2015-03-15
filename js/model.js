@@ -332,7 +332,7 @@ var game_tags = {
     "selected":"false"
   }
 ]
-}
+};
 
 var tagsToShow = 3;
 
@@ -531,9 +531,9 @@ var questions = [
   "tags" : ["Partnerships"]
 },
 {   "question" : "where you need to build or find patterns?",
-  "tags" : ["Pattern building" "Pattern recognition"]
+  "tags" : ["Pattern building","Pattern recognition"]
 },
-{   "question" : "where players are eliminated as the game goes by?" 
+{   "question" : "where players are eliminated as the game goes by?", 
     "tags" : ["Player elimination"]
 },
 {   "question" : "where you rely on luck to carry out certain actions?",
@@ -545,7 +545,7 @@ var questions = [
 {   "question" : "where you have to trade different game pieces between players?",
   "tags" : ["Trading"]
 },
-{   "question" : "about trick taking?" //OJO AQUI!!!!!!
+{   "question" : "about trick taking?", //OJO AQUI!!!!!!
     "tags" : ["Trick-taking"]
 },
 {   "question" : "based on a voting system?",
