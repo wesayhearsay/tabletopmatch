@@ -213,8 +213,10 @@ body {
 .ngrs-range-slider {
   position: relative;
   margin: 10px 0 30px;
-  padding: 4px;
-  border: 1px solid #ccc;
+  padding: 4px 0;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  /*border: 1px solid #ccc;
   background: #fff;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -226,7 +228,7 @@ body {
   -o-transition: border 0.2s linear, box-shadow 0.2s linear;
   -webkit-transition: border 0.2s linear, box-shadow 0.2s linear;
   transition: border 0.2s linear, box-shadow 0.2s linear;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;*/
   /*------------------------------------*\
       RUNNER
   \*------------------------------------*/
@@ -270,8 +272,8 @@ body {
 /* line 53, scss/_rangeSlider.scss */
 .ngrs-range-slider .ngrs-runner {
   position: relative;
-  margin: 0 9px;
-  height: 18px;
+  margin: 0;
+  /*height: 18px;*/
 }
 /* line 63, scss/_rangeSlider.scss */
 .ngrs-range-slider .ngrs-join {
@@ -297,14 +299,14 @@ body {
 .ngrs-range-slider .ngrs-handle {
   position: absolute;
   z-index: 2;
-  height: 100%;
-  width: 18px;
-  margin: 0 0 0 -9px;
+  height: 15px;
+  width: 15px;
+  margin: -7px 0 0 -9px;
   background: #efefef;
   border: 1px solid #ccc;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 30px;
   /*------------------------------------*\
       HANDLE ICON
   \*------------------------------------*/
@@ -329,11 +331,11 @@ body {
 }
 /* line 120, scss/_rangeSlider.scss */
 .ngrs-range-slider .ngrs-handle-min i {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFNJREFUeNpiYMAEXEDsA+OwoEnKALETEHOgK2AEYhMgNkQ3DqSAB6pLAot1DExIJmAFzED8C4hvQdnIppyFKYCBp0D8CohloVafxWUqN7I3AQIMAKw6B24pOi8lAAAAAElFTkSuQmCC");
+  /*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFNJREFUeNpiYMAEXEDsA+OwoEnKALETEHOgK2AEYhMgNkQ3DqSAB6pLAot1DExIJmAFzED8C4hvQdnIppyFKYCBp0D8CohloVafxWUqN7I3AQIMAKw6B24pOi8lAAAAAElFTkSuQmCC");*/
 }
 /* line 127, scss/_rangeSlider.scss */
 .ngrs-range-slider .ngrs-handle-max i {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFdJREFUeNpiYEAAHyDmYkADzEhsByBWA+K3QPwJmwJjIGYBYlUgZgLi59gUwIAkEEsD8VMmBtyAkQFqJDZwAYjPAPE/dAU/gHg/ED/GpgvkTW50QYAAAwADfwrM5sqplgAAAABJRU5ErkJggg==");
+  /*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFdJREFUeNpiYEAAHyDmYkADzEhsByBWA+K3QPwJmwJjIGYBYlUgZgLi59gUwIAkEEsD8VMmBtyAkQFqJDZwAYjPAPE/dAU/gHg/ED/GpgvkTW50QYAAAwADfwrM5sqplgAAAABJRU5ErkJggg==");*/
 }
 /* line 137, scss/_rangeSlider.scss */
 .ngrs-range-slider .ngrs-value {
@@ -482,10 +484,10 @@ body {
 }
 /* line 318, scss/_rangeSlider.scss */
 .ngrs-range-slider.ngrs-focus {
-  border-color: rgba(82, 168, 236, 0.8);
+/*  border-color: rgba(82, 168, 236, 0.8);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);*/
 }
 /* line 329, scss/_rangeSlider.scss */
 .ngrs-range-slider.ngrs-disabled, .ngrs-range-slider.ngrs-disabled.ngrs-focus {
