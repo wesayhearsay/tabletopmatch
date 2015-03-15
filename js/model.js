@@ -350,11 +350,11 @@ var questions = [
     "tags" : ["Economic simulation"]
 },
 
-{   "question" : "about environmental catastrophies?",
+{   "question" : "about environmental catastrophes?",
     "tags" : ["Environmental"]
 },
 
-{   "question" : "that is edcational?",
+{   "question" : "that is educational?",
     "tags" : ["Educational"]
 },
 
@@ -382,7 +382,7 @@ var questions = [
   "tags" : ["Renaissance"]
 },
 
-{   "question" : "about murders and mistery?",
+{   "question" : "about murders and mystery?",
   "tags" : ["Murder / mistery"]
 },
 
@@ -402,7 +402,7 @@ var questions = [
   "tags" : ["Pirates"]
 },
     
-{   "question" : "Set in a world of science fiction?",
+{   "question" : "set in a world of science fiction?",
   "tags" : ["Science fiction", "Space exploration"]
 },
     
@@ -438,7 +438,7 @@ var questions = [
     "tags" : ["abstract"]
 },
 
-{   "question" : "that takes player on an adventure?",
+{   "question" : "that takes you on an adventure?",
   "tags" : ["Adventure"]
 },
 {   "question" : "where it is important to have a good strategy?",
@@ -482,7 +482,7 @@ var questions = [
 {   "question" : "where you draw lines?",
   "tags" : ["Line drawing"]
 },
-{   "question" : "where the board is different everytime you play it?",
+{   "question" : "where the board is different every time you play it?",
   "tags" : ["Modular board"]
 },
 {   "question" : "where you are supposed to move from one point to another in the board?",
@@ -494,7 +494,7 @@ var questions = [
 {   "question" : "where you have to build connections between different places/points?",
   "tags" : ["Route / Network Building"]
 },
-{   "question" : "where you deploy your game pieces secretely?",
+{   "question" : "where you deploy your game pieces secretly?",
   "tags" : ["Secret unit deployment"]
 },
 {   "question" : "where you set down tiles throughout the game",
@@ -527,7 +527,7 @@ var questions = [
 {   "question" : "where you need to manage the cards in your hand, to make certain actions?",
   "tags" : ["Hand management"]
 },
-{   "question" : "where you need to create alliences or partnerships?",
+{   "question" : "where you need to create alliances or partnerships?",
   "tags" : ["Partnerships"]
 },
 {   "question" : "where you need to build or find patterns?",
@@ -563,7 +563,7 @@ var questions = [
 {   "question" : "about accumulating resources",
   "tags" : ["Accumulating "]
 },
-{   "question" : "about comparing your game pices to other players?",
+{   "question" : "about comparing your game pieces to other players?",
   "tags" : ["Comparing"]
 },
 {   "question" : "in which you are given a set of cards, you chose one, and pass the rest to the player on your right. Then you keep doing this for several times.",
@@ -584,7 +584,7 @@ var questions = [
 {   "question" : "in which you have to match elements within the game?",
   "tags" : ["Matching"]
 },
-{   "question" : "that requires you to act out scenes in fron of your fellow gamers?",
+{   "question" : "that requires you to act out scenes in front of your fellow gamers?",
   "tags" : ["Acting"]
 },
 {   "question" : "in which you have to negotiate terms within the game with the other players?",
