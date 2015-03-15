@@ -103,3 +103,26 @@ serviceModule.service('questionsService', function() {
         }
     }; 
 });
+
+// //service for adding games to  user
+serviceModule.service('userService', function(){
+   var  user = null;
+   var library = [];
+    return {
+        //gives the games variable the data (value) that has been gotten from the ajax call
+        set: function(value) {
+             user = value;
+        },
+        //checks if the function has been called before
+        isInitialized: function(user) {
+            //if the games variable is equal to null, returns false
+            //if the games variable is not equal to null, returns true
+            return ( user != null);
+        }, 
+        addToLibrary: function(id){
+            
+             library.push({"game" : id});
+             console.log(library);
+        }
+    };
+});

@@ -234,7 +234,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     }
 });
 
-controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService) {
+controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService, userService) {
     //gets rid of the : character
     var $id =  $stateParams.id;
     //checks if the games.json has ever been accessed before.
@@ -266,7 +266,7 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
     };
 
     $scope.addToLibrary = function(gameID){
-        
+        userService.addToLibrary(gameID);
     }
    
 });
@@ -290,15 +290,17 @@ controllersModule.controller('filterController', function($scope, filterService)
 });
 
 
-controllersModule.controller('userLibrary', function($scope, $http) {
-
- $http.get("js/user.json").success(function(data) {
-           
+controllersModule.controller('userLibrary', function($scope, $http, userService) {
+if (!userService.isInitialized()) {
+    $http.get("js/user.json").success(function(data) {
+           //the questionaire variable is set with the data gotten from the call
+            userService.set(data);
+            
             $scope.user = data;
             console.log($scope.user)
         }).
         error(function() { //if an error occured, the console shows that the json wasn't included
             console.log("json not included");
         });
-    
+    }
 });
