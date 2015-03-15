@@ -1,53 +1,62 @@
 <div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 ">
-		<h1>{{game.name}}</h1>
-		<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-		<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
-		<hr />
-
-	<div class="row gameDetails">
-		<div class="col-md-2">
-			<img src="./img/thumb_{{game.image}}" class="gameImage" />
-			<button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id)">Add to my Library</button>
-		</div>
-		<div class="col-md-3">
-			<div class="gameDetail">
-				<div class="col-md-4">
-					<img src="./img/icon/players.svg" class="icon" />
-				</div>
-				<div class="col-md-8">
-					<div class="row">Players:</div>
-					<div class="row">{{game.min_players}}-{{game.max_players}}</div>
-				</div>
-			</div>
-			<div class="gameDetail">
-				<div class="col-md-4">
-					<img src="./img/icon/setup.svg" class="icon" />
-				</div>
-				<div class="col-md-8">
-					<div class="row">Setup:</div>
-					<div class="row">{{game.preparation_time}}</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="gameDetail">
-				<div class="col-md-4">
-					<img src="./img/icon/age.svg" class="icon" />
-				</div>
-				<div class="col-md-8">
-					<div class="row">Min-Age:</div>
-					<div class="row">{{game.min_age}}</div>
-				</div>
-			</div>
-			<div class="gameDetail">
-				<div class="col-md-4">
-					<img src="./img/icon/time.svg" class="icon" />
-				</div>
-				<div class="col-md-8">
-					<div class="row">Play-Time:</div>
-					<div class="row">{{game.duration}}</div>
-				</div>
-			</div>
-		</div>
-</div><!-- end .row.gameDetails -->
+    <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+    <h1>{{game.name}}</h1>
+    <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6 addToLibrary">
+    <button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id)" ng-hide="inLibrary">Add to my Library</button>
+    <p class="alert alert-success" ng-show="justAdded"><span class="glyphicon glyphicon-ok"></span> Game Added to Your Library</p>
+    <p class="alert alert-success" ng-show="already"><span class="glyphicon glyphicon-ok"></span> Game in Library</p>
+    <button class="btn btn-sm btn-default" ng-show="inLibrary" ng-click="removeFromLibrary(game.id)">Remove from Library</button>
+    </div>
+    </div>
+    <hr />
+    <div class="row gameDetails">
+        <div class="col-md-2">
+            <img src="./img/thumb_{{game.image}}" class="gameImage" />
+        </div>
+        <div class="col-md-3">
+            <div class="gameDetail">
+                <div class="col-md-4">
+                    <img src="./img/icon/players.svg" class="icon" />
+                </div>
+                <div class="col-md-8">
+                    <div class="row">Players:</div>
+                    <div class="row">{{game.min_players}}-{{game.max_players}}</div>
+                </div>
+            </div>
+            <div class="gameDetail">
+                <div class="col-md-4">
+                    <img src="./img/icon/setup.svg" class="icon" />
+                </div>
+                <div class="col-md-8">
+                    <div class="row">Setup:</div>
+                    <div class="row">{{game.preparation_time}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="gameDetail">
+                <div class="col-md-4">
+                    <img src="./img/icon/age.svg" class="icon" />
+                </div>
+                <div class="col-md-8">
+                    <div class="row">Min-Age:</div>
+                    <div class="row">{{game.min_age}}</div>
+                </div>
+            </div>
+            <div class="gameDetail">
+                <div class="col-md-4">
+                    <img src="./img/icon/time.svg" class="icon" />
+                </div>
+                <div class="col-md-8">
+                    <div class="row">Play-Time:</div>
+                    <div class="row">{{game.duration}}</div>
+                </div>
+            </div>
+        </div>
+        
+   </div><!-- end .row.gameDetails -->
 </div><!-- end .main -->

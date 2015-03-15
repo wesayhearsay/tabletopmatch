@@ -108,6 +108,8 @@ serviceModule.service('questionsService', function() {
 serviceModule.service('userService', function(){
    var  user = null;
    var library = [];
+   var added = false;
+   var inLibrary = false;
     return {
         //gives the games variable the data (value) that has been gotten from the ajax call
         set: function(value) {
@@ -121,8 +123,25 @@ serviceModule.service('userService', function(){
         }, 
         addToLibrary: function(id){
             
-             library.push({"game" : id});
+             library.push(id);
+             added = true;
+             inLibrary = true;
              console.log(library);
+        }, 
+        removeFromLibrary: function(id){
+             for (var i = 0; i < library.length; i++) {
+                if (library[i] === id) {
+                    library.splice(i,1);
+                    console.log(library);
+                }
+            }
+        },
+        find: function(id){
+             for (var i = 0; i < library.length; i++) {
+                if (library[i] === id) {
+                    return true;
+                }
+            }
         }
     };
 });

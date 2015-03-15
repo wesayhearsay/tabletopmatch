@@ -252,6 +252,12 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
             console.log("json not included");
         });
     }
+    if(userService.find($id)){
+        $scope.inLibrary=true;
+        $scope.already = true;
+    }else {
+        $scope.inLibrary=false;
+    }
     // in case the games has already been included, and there is an gameID in the route
     if ($id && gamesService.isInitialized()) {
         //the current scope gets the array that is associated with that particular question
@@ -267,6 +273,16 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
 
     $scope.addToLibrary = function(gameID){
         userService.addToLibrary(gameID);
+        $scope.inLibrary = true; 
+        $scope.justAdded = true; 
+
+        
+    }
+    $scope.removeFromLibrary = function(gameID){
+        userService.removeFromLibrary(gameID);
+        $scope.inLibrary = false;
+         $scope.justAdded = false; 
+         $scope.already = false;
     }
    
 });

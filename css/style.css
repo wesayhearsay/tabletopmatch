@@ -218,7 +218,9 @@
     margin: 0 10px;
     margin: 0 1rem;
 }
-
+.addToLibrary{
+  margin-top: 20px;
+}
 /**
  *  Angular RangeSlider SCSS
  * 
