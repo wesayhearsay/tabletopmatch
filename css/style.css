@@ -56,6 +56,7 @@
 }
 
 .sidebar-filter {
+    padding: 40px 0;
     padding: 4rem 0;
     border-bottom: 1px solid #e5e5e5;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -201,6 +202,21 @@
     float:none;
     margin: 0 auto;
     display: block;
+}
+
+.sidebar-game-detail {
+    padding: 30px 0;
+    padding: 3rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar-game-detail:last-child {
+    border: none;
+}
+
+.game-details-list {
+    margin: 0 10px;
+    margin: 0 1rem;
 }
 
 /**

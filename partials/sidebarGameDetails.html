@@ -1,34 +1,25 @@
-<div id="sidebarFilters" class="col-sm-12 col-md-3 col-lg-3 sidebar">
-  <div class="row gameAttributes">
-		<div class="col-md-12">
-			<div class="row">
-				<hr />
-				<h4>Type</h4>
-				<div ng-repeat="attribute in game.attributes | filter:{type: 'type'}">
-					{{attribute.name}}
-				</div>
-			</div>
-			<div class="row">
-				<hr />
-				<h4>Category</h4>
-				<div ng-repeat="attribute in game.attributes | filter:{type: 'category'}">
-					{{attribute.name}}
-				</div>
-			</div>
-			<div class="row">
-				<hr />
-				<h4>Mechanics</h4>
-				<div ng-repeat="attribute in game.attributes | filter:{type: 'mechanics'}">
-					{{attribute.name}}
-				</div>
-			</div>
-			<div class="row">
-				<hr />
-				<h4>Theme</h4>
-				<div ng-repeat="attribute in game.attributes | filter:{type: 'theme'}">
-					{{attribute.name}}
-				</div>
-			</div>
+<div id="sidebar-game-details" class="col-sm-12 col-md-3 col-lg-3 sidebar">
+	<div class="sidebar-game-detail">
+		<h3 class="sidebar-heading">Type</h3>
+		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'type'}">
+			{{attribute.name}}
 		</div>
-	</div><!-- end .gameAttributes -->
-</div>
+	</div>
+	<div class="sidebar-game-detail">
+		<h3 class="sidebar-heading">Category</h3>
+		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'category'}">
+			{{attribute.name}}
+		</div>
+	</div>
+	<div class="sidebar-game-detail">
+		<h3 class="sidebar-heading">Mechanics</h3>
+		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'mechanics'}">
+			{{attribute.name}}
+		</div>
+	</div>
+	<div class="sidebar-game-detail">
+		<h3 class="sidebar-heading">Theme</h3>
+		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'theme'}">
+			{{attribute.name}}
+		</div>
+</div><!-- end #sidebar-game-detail -->
