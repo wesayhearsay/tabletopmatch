@@ -133,11 +133,11 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     }
 
     // accordion tag filtering
-    
     $scope.tagFilter = function(game) {
         $scope.filterText = questionsService.get();
+        var totalTags = $scope.filterText.length;
         var shouldShow = false;
-        if ($scope.filterText.length > 0) {
+        if (totalTags > 0) {
             for(var k=0; k<game.attributes.length; k++){    
                 if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
                     shouldShow = true;
