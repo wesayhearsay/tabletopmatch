@@ -103,7 +103,6 @@ controllersModule.controller('sidebarController', function($scope, playerService
 controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService, complexityService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
-    $scope.filterText = filterService.get();
     if (!gamesService.isInitialized()) {
     //if it hasn't been included before, an ajax call is made 
     //towards the file that is contained in the same folder as index.html
@@ -123,6 +122,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         console.log(gameID);
         $location.path(':'+ gameID);
     }
+
+    // accordion tag filtering
+    $scope.filterText = filterService.get();
     $scope.tagFilter = function(game) {
         var shouldShow = false;
         if ($scope.filterText.length > 0) {
@@ -132,9 +134,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
                     //return;
                 }
             }
-            if(shouldShow){
+            if (shouldShow) {
                 return game;
-            }else{
+            } else {
                 return;
             }
         }
