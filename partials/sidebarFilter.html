@@ -29,10 +29,10 @@
     	</div><!-- end btn-group -->
 	</div><!-- end #complexityFilter -->
 	<div id="questionsFilter">
-		<h3>Would you like to play a game </h3>
+		<h3>Would you like to play a game {{questionModel[questionNumber].question}}</h3>
 		<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-      		<a href="#" class="btn btn-default" role="button" ng-click="">YES</a>
-      		<a href="#" class="btn btn-default" role="button" ng-click="">NO</a>
+      		<a href="#" class="btn btn-default" role="button" ng-click="includeTags(1)">YES</a>
+      		<a href="#" class="btn btn-default" role="button" ng-click="includeTags(0)">NO</a>
     	</div><!-- end btn-group -->
 	</div><!-- end #questionsFilter -->
 </div><!--  end #sidebarFilters -->

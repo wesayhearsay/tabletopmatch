@@ -89,3 +89,18 @@ serviceModule.service('complexityService', function() {
         }
     }; 
 });
+
+// service for the questions filtering
+serviceModule.service('questionsService', function() {
+    var tagsForFilter = []; // default complexity medium
+    return {
+        get: function(){
+            return tagsForFilter;
+        },
+        set: function(numberOfQuestion){
+            var tagsToAdd = questions[numberOfQuestion].tags;
+            tagsForFilter = tagsForFilter.concat(tagsToAdd);
+            console.log(tagsForFilter)
+        }
+    }; 
+});

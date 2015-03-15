@@ -8,7 +8,7 @@ controllersModule.controller('HeaderController', function($scope) {
 });
 
 /* Controller for the filters in the sidebar */
-controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService, complexityService) {
+controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService, complexityService, questionsService) {
 
     // number of players filter
     $scope.playerLimit = {
@@ -97,6 +97,15 @@ controllersModule.controller('sidebarController', function($scope, playerService
                 $scope.allClass = "";
                 break;
         }
+    }
+    //Question filter
+    $scope.questionNumber = 0;
+    $scope.questionModel = questions;
+    $scope.includeTags = function (shouldInclude) {
+        if(shouldInclude){
+            questionsService.set($scope.questionNumber); //the service has the array of the tags the user has selected via the questions.
+        }
+        $scope.questionNumber++;
     }
 });
 
