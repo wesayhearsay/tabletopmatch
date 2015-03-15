@@ -38,7 +38,7 @@
  .sidebar {
   background: #283340;
   color: #e5e5e5;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #e5e5e5;
   /*display: none;*/
 }
 @media (min-width: 768px) {
@@ -83,7 +83,7 @@
 }
 .complexity-link {
     margin: 0 auto;
-    color: #ffffff;
+    color: #e5e5e5;
     text-align: center;
 }
 
@@ -105,7 +105,7 @@
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff;
+  color: #e5e5e5;
   background-color: #428bca;
 }
 
@@ -184,10 +184,11 @@
 }
 
 .gameDetail {
-  background-color: rgba( 200, 200, 200, 1);
-  margin: 5px;
-  overflow: auto;
-  border-radius: 10px;
+    background: #C8C8C8
+    background-color: rgba( 200, 200, 200, 1);
+    margin: 5px;
+    overflow: auto;
+    border-radius: 10px;
 }
 
 .icon {
