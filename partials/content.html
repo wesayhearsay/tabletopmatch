@@ -1,6 +1,6 @@
 <div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
-	<div ng-controller="filterController" ng-init="showAcordeon = 0">
-		<div class="well" ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> <!-- each row of tags -->
+	<!-- <div ng-controller="filterController" ng-init="showAcordeon = 0">
+		<div class="well" ng-repeat="(key, value) in filter" ng-hide="showAcordeon===0"> 
 			<div class="row" ng-init="limit = filterLimit">
 				<div class="col-md-10">
 					<div class="col-md-4" ng-repeat="currentKey in value | limitTo: limit">
@@ -11,7 +11,7 @@
 							<span class="">{{currentKey.name }}</span>
 						</div>
 					</div>
-				</div><!-- .col-md-10 -->
+				</div>
 				<div class="col-md-2">
 					<div class="col-md-12" ng-hide="limit===value.length" ng-click="limit = value.length">
 						<span class="label label-default">Show more</span>
@@ -19,15 +19,14 @@
 					<div class="col-md-12" ng-hide="limit<value.length" ng-click="limit = filterLimit">
 						<span class="label label-default">Show less</span>
 					</div>
-				</div> <!-- .col-md-2 -->
+				</div> 
 			</div>
 		</div>
-		<!-- <div>{{tagsInclude}}</div> -->
 		<a href="#" class="accordion-filter-toggle" ng-hide="showAcordeon===0" ng-click="showAcordeon = 0"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span> Hide these boring Filters</a>
 	<a href="#" class="accordion-filter-toggle" ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
 	<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Show me the advanced filters</a>
 		
-	</div><!-- end ng-controller -->
+	</div> --><!-- end ng-controller -->
 
 	<div id="matches" class="row-games">
 		<h2 class="games-heading">Games <span class="games-filter-number">({{filteredGames.length}})</span></h2>
