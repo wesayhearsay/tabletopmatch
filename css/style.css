@@ -7,6 +7,8 @@
  */
 
  /* Move down content because we have a fixed navbar that is 50px tall */
+
+
  body {
     padding-top: 50px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -35,19 +37,34 @@ a {
  .navbar-fixed-top {
   border: 0;
 }
+.navbar {
+  background: #f9f9f9;
+  border-bottom: 1px solid #e5e5e5;
+}
+.navbar-toggle {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+}
+.icon-bar {
+  background: #EB7B59;
+}
+.navbar-collapse {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 
 /*
  * Sidebar
  */
 
- /* Hide for mobile, show later */
  .sidebar {
   background: #283340;
   color: #e5e5e5;
   border-right: 1px solid #e5e5e5;
-  /*display: none;*/
+  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .sidebar {
     position: fixed;
     top: 50px;
@@ -129,7 +146,7 @@ a {
  * Main content
  */
 
-.main {
+ .main {
   padding: 20px;
 }
 @media (min-width: 768px) {
@@ -182,7 +199,7 @@ a {
 }
 
 .row-games {
-   
+
 }
 
 .game-card {
@@ -219,7 +236,7 @@ a {
   line-height: 1em;
 
   margin: 0.2em;
-}*/
+  }*/
 
  /*
 * Game detail view
