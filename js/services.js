@@ -80,12 +80,53 @@ serviceModule.service('timeService', function() {
 // service for the complexity filtering
 serviceModule.service('complexityService', function() {
     var complexity = 0; // default complexity medium
+    var activeClass = {
+        easy: "",
+        medium: "",
+        complex: "",
+        all: "active", // default active class
+    }
     return {
         get: function(){
             return complexity;
         },
         set: function(value){
             complexity = value;
+        },
+        getActiveClass: function() {
+            return activeClass;
+        },
+        setActiveClassEasy: function() {
+            activeClass = {
+                easy: "active",
+                medium: "",
+                complex: "",
+                all: "",
+            }
+        },
+        setActiveClassMedium: function() {
+            activeClass = {
+                easy: "",
+                medium: "active",
+                complex: "",
+                all: "",
+            }
+        },
+        setActiveClassComplex: function() {
+            activeClass = {
+                easy: "",
+                medium: "",
+                complex: "active",
+                all: "",
+            }
+        },
+        setActiveClassAll: function() {
+            activeClass = {
+                easy: "",
+                medium: "",
+                complex: "",
+                all: "active",
+            }
         }
     }; 
 });

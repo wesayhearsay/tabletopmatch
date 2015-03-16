@@ -60,13 +60,8 @@ controllersModule.controller('sidebarController', function($scope, playerService
     }
 
     $scope.complexityFilter = complexityService.get();
-    
-    
+    $scope.activeClass = complexityService.getActiveClass();
 
-    $scope.easyClass;
-    $scope.mediumClass;
-    $scope.complexClass;
-    $scope.allClass = "active"; // default
     // complexity filter
     $scope.includeComplexity = function (complexity) {
         $scope.complexityFilter = complexity;
@@ -76,30 +71,19 @@ controllersModule.controller('sidebarController', function($scope, playerService
         // unelegant solution to change the active class, but it was quick
         switch (complexity) {
             case 0:
-                $scope.easyClass = "";
-                $scope.mediumClass = "";
-                $scope.complexClass = "";
-                $scope.allClass = "active";
+                complexityService.setActiveClassAll();
                 break;
             case 1:
-                $scope.easyClass = "active";
-                $scope.mediumClass = "";
-                $scope.complexClass = "";
-                $scope.allClass = "";
+                complexityService.setActiveClassEasy();
                 break;
             case 2:
-                $scope.easyClass = "";
-                $scope.mediumClass = "active";
-                $scope.complexClass = "";
-                $scope.allClass = "";
+                complexityService.setActiveClassMedium();
                 break;
             case 3:
-                $scope.easyClass = "";
-                $scope.mediumClass = "";
-                $scope.complexClass = "active";
-                $scope.allClass = "";
+                complexityService.setActiveClassComplex();
                 break;
         }
+        $scope.activeClass = complexityService.getActiveClass();
     }
     //Question filter
     $scope.questionNumber = 0;
