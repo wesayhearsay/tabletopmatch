@@ -11,14 +11,14 @@ controllersModule.controller('HeaderController', function($scope) {
 controllersModule.controller('sidebarController', function($scope, playerService, ageService, timeService, complexityService, questionsService) {
 
     // number of players filter
+    $scope.numberOfPlayers = playerService.get(); // default number of players
     $scope.playerLimit = {
         min: 1,
         max: 30,
         userMin: 1,
-        userMax: 6
+        userMax: $scope.numberOfPlayers
     };
 
-    $scope.numberOfPlayers = playerService.get(); // default number of players
     $scope.includePlayers = function(number) {
         //$scope.numberOfPlayers = playerService.get();
         $scope.numberOfPlayers = number;
@@ -28,14 +28,14 @@ controllersModule.controller('sidebarController', function($scope, playerService
     }
 
     // minimum age filter
+    $scope.ageInclude = ageService.get();
     $scope.ageLimit = {
         min: 2,
         max: 18,
         userMin: 2,
-        userMax: 12
+        userMax: $scope.ageInclude
     };
 
-    $scope.ageInclude = ageService.get();
     $scope.includeAge = function(minAge) {
         $scope.ageInclude = ageService.get();
         $scope.ageInclude = minAge;
@@ -45,13 +45,13 @@ controllersModule.controller('sidebarController', function($scope, playerService
     }
 
     // time to play filter
+    $scope.timeFilter = timeService.get();
     $scope.timeLimit = {
         min: 10,
         max: 360,
-        userMin: 10,
-        userMax: 120,
+        userMin: $scope.timeFilter.min,
+        userMax: $scope.timeFilter.max,
     };
-    $scope.timeFilter = timeService.get();
     $scope.includeTime = function(timeMin, timeMax) {
         $scope.timeFilter = timeService.get();
         $scope.timeFilter.min = timeMin;
@@ -59,15 +59,18 @@ controllersModule.controller('sidebarController', function($scope, playerService
         timeService.set($scope.timeFilter.min, $scope.timeFilter.max);
     }
 
+    $scope.complexityFilter = complexityService.get();
+    
+    
+
     $scope.easyClass;
     $scope.mediumClass;
     $scope.complexClass;
     $scope.allClass = "active"; // default
     // complexity filter
     $scope.includeComplexity = function (complexity) {
-        $scope.complexityFilter = complexityService.get();
         $scope.complexityFilter = complexity;
-        console.log("$scope.complexityFilter in includeComplexity " + $scope.complexityFilter);
+        //console.log("$scope.complexityFilter in includeComplexity " + $scope.complexityFilter);
         complexityService.set($scope.complexityFilter); 
 
         // unelegant solution to change the active class, but it was quick
