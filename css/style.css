@@ -207,14 +207,26 @@
  /*
 * Game detail view
 */
-.gameDetailView {
-  margin: 15px;
+
+.game-name, .game-info, {
+    padding: 30px 0;
+    padding: 3rem 0;
 }
 
-.gameImage {
-  float: left;
-  width: 110%;
-  margin: 5px;
+.game-name {
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0;
+    padding-bottom: 20px;
+    padding-bottom: 2rem;
+}
+
+.game-img, .game-details {
+    margin-top: 20px;
+    margin-top: 2rem;
+}
+
+.gameDetailView {
+  margin: 15px;
 }
 
 .gameDetail {
@@ -253,6 +265,7 @@
 }
 .addToLibrary{
   margin-top: 20px;
+  margin-top: 2rem;
 }
 /**
  *  Angular RangeSlider SCSS
