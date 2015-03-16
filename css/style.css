@@ -41,6 +41,10 @@ a {
   background: #f9f9f9;
   border-bottom: 1px solid #e5e5e5;
 }
+
+.navbar-nav > li > a {
+    padding: 1.5rem 2.5rem;
+}
 .navbar-toggle {
   background: #f9f9f9;
   border: 1px solid #e5e5e5;
@@ -51,6 +55,13 @@ a {
 .navbar-collapse {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+@media (min-width: 992px) {
+    .navbar-header {
+        //background: #283340;
+        border-right: 1px solid #e5e5e5;
+    }
 }
 
 /*
@@ -147,14 +158,14 @@ a {
  */
 
  .main {
-  padding: 20px;
+  padding: 20px 0;
 }
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .main {
     padding-right: 40px;
     padding-left: 40px;
 }
-}
+}*/
 .main .page-header {
   margin-top: 0;
 }
