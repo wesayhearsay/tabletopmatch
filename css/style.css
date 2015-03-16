@@ -76,7 +76,8 @@
 }
 .filter-toggle {
     float: right;
-    color: rgba(169, 169, 169, 1);
+    color: #EB7B59;
+    color: rgba(235, 123, 89, 0.8);
     font-size: 12px;
     font-size: 1.2rem;
     margin: 5px 0px 0px;
@@ -208,19 +209,26 @@
 * Game detail view
 */
 
-.game-name, .game-info, {
+.game-detail-name, .game-detail-info, {
     padding: 30px 0;
     padding: 3rem 0;
 }
 
-.game-name {
+.game-detail-name {
     border-bottom: 1px solid #e5e5e5;
     padding-top: 0;
     padding-bottom: 20px;
     padding-bottom: 2rem;
 }
 
-.game-img, .game-details {
+.game-detail-heading {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.game-detail-img, .game-details {
     margin-top: 20px;
     margin-top: 2rem;
 }
@@ -259,9 +267,15 @@
     border: none;
 }
 
-.game-details-list {
+.game-sidebar-list {
     margin: 0 10px;
     margin: 0 1rem;
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+
+.game-sidebar-icon {
+    float: right;
 }
 .addToLibrary{
   margin-top: 20px;

@@ -1,25 +1,32 @@
 <div id="sidebar-game-details" class="col-sm-12 col-md-3 col-lg-3 sidebar">
-	<div class="sidebar-game-detail">
-		<h3 class="sidebar-heading">Type</h3>
-		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'type'}">
-			{{attribute.name}}
+	<div class="sidebar-filter">
+		<h3 class="sidebar-heading">Number of players <span class="game-sidebar-icon glyphicon glyphicon-user"></span></h3>
+		<div class="game-sidebar-list">
+			{{game.min_players}}-{{game.max_players}}
 		</div>
-	</div>
-	<div class="sidebar-game-detail">
-		<h3 class="sidebar-heading">Category</h3>
-		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'category'}">
-			{{attribute.name}}
+	</div><!-- end .sidebar-filter -->
+	<div class="sidebar-filter">
+		<h3 class="sidebar-heading">Minimum age <span class="game-sidebar-icon glyphicon glyphicon-ban-circle"></span></h3>
+		<div class="game-sidebar-list">
+			{{game.min_age}}
 		</div>
-	</div>
-	<div class="sidebar-game-detail">
-		<h3 class="sidebar-heading">Mechanics</h3>
-		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'mechanics'}">
-			{{attribute.name}}
+	</div><!-- end .sidebar-filter -->
+	<div class="sidebar-filter">
+		<h3 class="sidebar-heading">Setup time <span class="game-sidebar-icon glyphicon glyphicon-wrench"></span></h3>
+		<div class="game-sidebar-list">
+			{{game.preparation_time | timeFilter}}
 		</div>
-	</div>
-	<div class="sidebar-game-detail">
-		<h3 class="sidebar-heading">Theme</h3>
-		<div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'theme'}">
-			{{attribute.name}}
+	</div><!-- end .sidebar-filter -->
+	<div class="sidebar-filter">
+		<h3 class="sidebar-heading">Play time <span class="game-sidebar-icon glyphicon glyphicon-time"></span></h3>
+		<div class="game-sidebar-list">
+			{{game.duration | timeFilter}}
 		</div>
+	</div><!-- end .sidebar-filter -->
+	<div class="sidebar-filter">
+		<h3 class="sidebar-heading">Complexity <span class="game-sidebar-icon glyphicon glyphicon-thumbs-up"></span></h3>
+		<div class="game-sidebar-list">
+			{{game.complexity}}
+		</div>
+	</div><!-- end .sidebar-filter -->
 </div><!-- end #sidebar-game-detail -->

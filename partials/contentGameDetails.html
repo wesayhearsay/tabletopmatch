@@ -1,5 +1,5 @@
 <div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
-    <div class="row game-name">
+    <div class="row game-detail-name">
         <div class="col-sm-6 col-md-6 col-lg-6">
             <h1>{{game.name}}</h1>
             <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
@@ -11,19 +11,49 @@
             <p class="alert alert-success" ng-show="already"><span class="glyphicon glyphicon-ok"></span> Game in Library</p>
             <button class="btn btn-sm btn-default" ng-show="inLibrary" ng-click="removeFromLibrary(game.id)">Remove from Library</button>
         </div><!-- end .addToLibrary -->
-    </div><!-- end .row .game-name -->
+    </div><!-- end .row .game-detail-name -->
 
-    <div class="row game-info">
-        <div class="col-sm-12 col-md-6 col-lg-6 game-img">
+    <div class="row game-detail-info">
+        <div class="col-sm-12 col-md-2 col-lg-2 game-detail-img">
             <img src="./img/thumb_{{game.image}}" class="img-responsive" />
         </div><!-- end .game-img -->
-        <div class="col-sm-12 col-md-6 col-lg-6 game-details">
-            <p>
-                <span class="glyphicon glyphicon-user"></span> Players: {{game.min_players}}-{{game.max_players}}
-            </p>
-            <p> <span class="glyphicon glyphicon-wrench"></span> Setup: {{game.preparation_time}}</p>
-            <p><span class="glyphicon glyphicon-ban-circle"></span> Age: {{game.min_age}}</p>
-            <p><span class="glyphicon glyphicon-time"></span> Play time: {{game.duration}}</p>
-        </div><!-- end .game-details -->
-    </div><!-- end .row .game-info -->
+        <div class="col-sm-12 col-md-10 col-lg-10 game-details">
+            <div class="game-detail-list col-sm-12 col-md-3 col-lg-3">
+                <h3 class="game-detail-heading">Type</h3>
+                <div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'type'}">
+                    {{attribute.name}}
+                </div>
+            </div><!-- end .game-detail-list -->
+            <div class="game-detail-list col-sm-12 col-md-3 col-lg-3">
+                <h3 class="game-detail-heading">Category</h3>
+                <div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'category'}">
+                    {{attribute.name}}
+                </div>
+            </div><!-- end .game-detail-list -->
+            <div class="game-detail-list col-sm-12 col-md-3 col-lg-3">
+                <h3 class="game-detail-heading">Mechanics</h3>
+                <div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'mechanics'}">
+                    {{attribute.name}}
+                </div>
+            </div><!-- end .game-detail-list -->
+            <div class="game-detail-list col-sm-12 col-md-3 col-lg-3">
+                <h3 class="game-detail-heading">Theme</h3>
+                <div class="game-details-list" ng-repeat="attribute in game.attributes | filter:{type: 'theme'}">
+                    {{attribute.name}}
+                </div><!-- end .game-detail-list -->
+            </div><!-- end .game-details -->
+        </div><!-- end .row .game-info -->
+
+        <div class="col-sm-12 col-md-12 col-lg 12 game-description">
+            <h3>How to play</h3>
+            <p>Each player starts the game with six random cards. Players then take turns being the storyteller. The player whose turn it is to be storyteller looks at the six images in his or her hand. From one of these, he or she makes up a sentence or phrase that might describe it and says it out loud (without showing the card to the other players).
+
+                Each other player then selects from among their own six cards the one that best matches the sentence given by the storyteller. Then, each player gives their selected card to the storyteller, without showing it to the others. The storyteller shuffles his or her chosen card with the cards received from the other players, and all cards are then dealt face up. The players (except for the storyteller) then secretly guess which picture was the storyteller's, using numbered voting chips.
+
+                If nobody or everybody finds the correct picture, the storyteller scores 0, and each of the other players scores 2. Otherwise the storyteller and all players who found the correct answer score 3. Players other than the storyteller score 1 point for each vote their own pictures receive.
+
+                A large part of the skill of the game comes from being able, when acting as the storyteller, to offer a title which is neither too obscure (such that no other player can identify it) nor too obvious (such that every player is able to guess it).
+
+                The game ends when the card deck is empty. The player with the highest point total wins the game.</p>
+            </div>
 </div><!-- end .main -->
