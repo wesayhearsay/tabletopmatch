@@ -6,7 +6,7 @@
 		</div>
 	</div><!-- end .sidebar-filter -->
 	<div class="sidebar-filter">
-		<h3 class="sidebar-heading">Minimum age <span class="game-sidebar-icon glyphicon glyphicon-ban-circle"></span></h3>
+		<h3 class="sidebar-heading">Minimum age <span class="game-sidebar-icon glyphicon glyphicon-glass"></span></h3>
 		<div class="game-sidebar-list">
 			{{game.min_age}}
 		</div>
@@ -24,9 +24,9 @@
 		</div>
 	</div><!-- end .sidebar-filter -->
 	<div class="sidebar-filter">
-		<h3 class="sidebar-heading">Complexity <span class="game-sidebar-icon glyphicon glyphicon-thumbs-up"></span></h3>
+		<h3 class="sidebar-heading">Complexity <span class="game-sidebar-icon glyphicon glyphicon-stats"></span></h3>
 		<div class="game-sidebar-list">
-			{{game.complexity}}
+			{{game.complexity | complexityFilter}}
 		</div>
 	</div><!-- end .sidebar-filter -->
 </div><!-- end #sidebar-game-detail -->
