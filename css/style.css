@@ -8,8 +8,9 @@
 
  /* Move down content because we have a fixed navbar that is 50px tall */
  body {
-  padding-top: 50px;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    padding-top: 50px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: #f9f9f9;
 }
 
 
@@ -81,33 +82,6 @@
     margin: 5px 0px 0px;
 }
 
-.filter-collapse {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-}
-
-
-
-.filter-collapse.ng-hide-add{
-      -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  opacity: 0;
-  display: block !important;
-}
-
-.filter-collapse.ng-hide-remove{
-      -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-  opacity: 1;
-  display: block !important;
-}
-
 .complexity-icon {
     fill: #ffffff;
     margin: 20px 0;
@@ -149,7 +123,7 @@
  * Main content
  */
 
- .main {
+.main {
   padding: 20px;
 }
 @media (min-width: 768px) {
@@ -184,7 +158,32 @@
 
 /*Games */
 
-.gameInstance {
+.accordion-filter-toggle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.row-games {
+   
+}
+
+.game-card {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+.game-year {
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+.game-name {
+}
+
+/*.gameInstance {
 
    min-height: 200px;
    padding: 0.5rem;
@@ -203,7 +202,7 @@
   line-height: 1em;
 
   margin: 0.2em;
-}
+}*/
 
  /*
 * Game detail view
