@@ -106,9 +106,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     $http.get("js/games.json").success(function(data) {
         //the questionaire variable is set with the data gotten from the call
         // gamesService.set(data);
-        console.log(data);
+        //console.log(data);
         $scope.games = data;
-        console.log($scope.games);
+        //console.log($scope.games);
     }).
     error(function() { //if an error occured, the console shows that the json wasn't included
         console.log("json not included");
@@ -172,7 +172,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     // filter games based on the duration
     $scope.timeFiltering = function (game) {
         $scope.timeInclude = timeService.get(); // get min time to play
-        console.log("$scope.timeInclude in timeFiltering "+ $scope.timeInclude);
+        //console.log("$scope.timeInclude in timeFiltering "+ $scope.timeInclude);
         if (game.duration >= $scope.timeInclude.min && game.duration <= $scope.timeInclude.max) { // if game fits criteria
             return game;
         } else {
@@ -300,11 +300,13 @@ if (!userService.isInitialized()) {
            //the questionaire variable is set with the data gotten from the call
             userService.set(data);
             $scope.user = data;
-            console.log($scope.user)
         }).
         error(function() { //if an error occured, the console shows that the json wasn't included
             console.log("json not included");
             console.log(JSON.stringify($http.get("js/user.json")));
         });
     }
+
+    $scope.library = userService.getLibrary();
+    console.log("$scope.library in userLibrary controller " + $scope.library);
 });

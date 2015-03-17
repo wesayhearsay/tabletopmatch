@@ -35,7 +35,8 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
                     
                 },
                 "content@": {
-                    templateUrl: "partials/library.html"
+                    templateUrl: "partials/contentLibrary.html",
+                    controller: "userLibrary"
                    
                 }
 

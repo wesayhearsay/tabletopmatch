@@ -299,8 +299,8 @@
 
 .profile-image {
 	max-width: 100%;
-	float:none;
-	margin: 0 auto;
+	float: none;
+	margin: 4rem auto;
 	display: block;
 }
 

@@ -169,6 +169,9 @@ serviceModule.service('userService', function(){
              inLibrary = true;
              console.log(library);
         }, 
+        getLibrary : function() {
+            return library;
+        },
         removeFromLibrary: function(id){
              for (var i = 0; i < library.length; i++) {
                 if (library[i] === id) {
