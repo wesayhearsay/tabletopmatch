@@ -1,11 +1,11 @@
-<div class="main col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
+<div class="main col-sm-12 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
     <div class="row game-detail-name">
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <h1>{{game.name}}</h1>
+            <h2 class="page-heading">{{game.name}}</h2>
             <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
             <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
         </div><!-- end {{game.name}} div -->
-        <div class="col-sm-6 col-md-6 col-lg-6 addToLibrary">
+        <div class="col-sm-6 col-md-6 col-lg-6 add-to-library">
             <button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id)" ng-hide="inLibrary">Add to my Library</button>
             <p class="alert alert-success" ng-show="justAdded"><span class="glyphicon glyphicon-ok"></span> Game Added to Your Library</p>
             <p class="alert alert-success" ng-show="already"><span class="glyphicon glyphicon-ok"></span> Game in Library</p>

@@ -13,6 +13,8 @@
     padding-top: 50px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     background: #f9f9f9;
+    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 a {
@@ -59,7 +61,7 @@ a {
 
 @media (min-width: 992px) {
     .navbar-header {
-        //background: #283340;
+        /*background: #283340;*/
         border-right: 1px solid #e5e5e5;
     }
 }
@@ -71,9 +73,8 @@ a {
  .sidebar {
   background: #283340;
   color: #e5e5e5;
-  border-right: 1px solid #e5e5e5;
-  padding: 10px 20px;
-  padding: 1rem 2rem;
+  padding: 20px;
+  padding: 2rem;
 }
 @media (min-width: 992px) {
   .sidebar {
@@ -83,7 +84,7 @@ a {
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    border-right: 1px solid #e5e5e5;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
@@ -158,7 +159,8 @@ a {
  */
 
  .main {
-  padding: 20px 0;
+  padding: 25px;
+  padding: 2.5rem;
 }
 /*@media (min-width: 768px) {
   .main {
@@ -198,10 +200,8 @@ a {
     font-size: 1.4rem;
 }
 
-.games-heading {
-    padding: 0 20px 20px 20px;
-    padding: 0 2rem 2rem 2rem;
-    margin: 0;
+.page-heading {
+    margin-top: 0;
 }
 
 .games-filter-number {
@@ -266,10 +266,13 @@ a {
 }
 
 .game-detail-heading {
-    margin: 0 0 10px 0;
+    margin: 2rem 0 0.5rem 0;
     font-size: 16px;
     font-size: 1.6rem;
     font-weight: bold;
+}
+.game-detail-list {
+  padding: 0;
 }
 
 .game-detail-img, .game-details {
@@ -301,6 +304,22 @@ a {
     display: block;
 }
 
+.sidebar-game-cover {
+  background: url('../img/games/dixit.jpg') no-repeat transparent; 
+  background-size: cover;
+  background-position: center center;
+  height: 18rem;
+}
+
+.sidebar-game-cover-heading {
+  position: relative;
+  top: 97%;
+  padding: 10px;
+  padding: 1rem;
+  color: #ffffff;
+  background: #283340;
+  background: none repeat scroll 0% 0% rgba(40, 51, 64, 0.8);
+}
 .sidebar-game-detail {
     padding: 30px 0;
     padding: 3rem 0;
@@ -321,9 +340,9 @@ a {
 .game-sidebar-icon {
     float: right;
 }
-.addToLibrary{
-  margin-top: 20px;
-  margin-top: 2rem;
+.add-to-library {
+  /*margin-top: 20px;
+  margin-top: 2rem;*/
 }
 /**
  *  Angular RangeSlider SCSS
