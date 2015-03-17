@@ -297,7 +297,7 @@ a {
   float: left;
 }
 
-#profileSidebar img{
+.profile-image {
     max-width: 100%;
     float:none;
     margin: 0 auto;
@@ -313,7 +313,7 @@ a {
 
 .sidebar-game-cover-heading {
   position: relative;
-  top: 97%;
+  /*top: 97%;*/
   padding: 10px;
   padding: 1rem;
   color: #ffffff;
