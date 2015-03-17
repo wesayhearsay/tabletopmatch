@@ -296,15 +296,15 @@ controllersModule.controller('filterController', function($scope, filterService)
 
 controllersModule.controller('userLibrary', function($scope, $http, userService) {
 if (!userService.isInitialized()) {
-    $http.get("js/user.json").success(function(data) {
+    $http.get("js/users.json").success(function(data) {
            //the questionaire variable is set with the data gotten from the call
             userService.set(data);
-            
             $scope.user = data;
             console.log($scope.user)
         }).
         error(function() { //if an error occured, the console shows that the json wasn't included
             console.log("json not included");
+            console.log(JSON.stringify($http.get("js/user.json")));
         });
     }
 });

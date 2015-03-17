@@ -3,11 +3,11 @@
 	"name": "Andres", 
 	"email": "andres@ttmatch.com",
 	"password": "reallysafepassword", 
-	"image": "img/users/andres.png"
+	"image": "img/users/user_andres.png"
 }, {
     "id": "2",
 	"name": "Diana", 
 	"email": "diana@ttmatch.com",
 	"password": "reallysafepassword", 
-	"image": "img/users/andres.png"
+	"image": "img/users/user_andres.png"
 }]
