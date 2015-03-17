@@ -1,6 +1,6 @@
 <div class="main col-sm-12 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
 	<div id="user-library" class="row-games">
-		<h2 class="page-heading">Your library <span class="games-filter-number">({{}})</span></h2>
+		<h2 class="page-heading">My library <span class="games-filter-number">({{}})</span></h2>
 		<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
 		<div ng-repeat="game in library" class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-2">
 			<a href class="thumbnail" ng-click="show(game.id)" ui-sref=".detail({id: game.id})">

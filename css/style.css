@@ -221,7 +221,6 @@
  	float: none;
  	display: inline-block;
  	vertical-align: middle;
- 	
  }
 
  .game-year {
@@ -231,6 +230,17 @@
 
  .game-name {
  }
+
+.thumbnail {
+	border-color: #e5e5e5;
+	padding: 0;
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+	border-color: #EB7B59;
+}
 
 /*.gameInstance {
 
