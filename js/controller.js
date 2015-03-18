@@ -123,15 +123,16 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     // accordion tag filtering
     $scope.tagFilter = function(game) {
         $scope.filterText = questionsService.get();
+        //$scope.progressBarColor = "progress-bar-success";
         var totalTags = $scope.filterText.length;
         var shouldShow = false;
         var matchingTags = 0;
         var matchingRating = 0;
-        console.log("filter:",$scope.filterText);
+        //console.log("filter:",$scope.filterText);
         if (totalTags > 0) {
             for(var k=0; k<game.attributes.length; k++){    
                 if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
-                    console.log(game.name + " matches by " + game.attributes[k].name);
+                    //console.log(game.name + " matches by " + game.attributes[k].name);
                     matchingTags++;
                     shouldShow = true;
                     //return;
@@ -139,6 +140,13 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
             }
             matchingRating = 100*(matchingTags/$scope.filterText.length);
             game.compatRating = Math.ceil(matchingRating);
+            if (game.compatRating<33) {
+                $scope.progressBarColor = "progress-bar-danger";
+            }else if (game.compatRating>=33 && game.compatRating<66) {
+                $scope.progressBarColor = "progress-bar-warning";
+            }else if (game.compatRating>=66) {
+                $scope.progressBarColor = "progress-bar-success";
+            };
             matchingTags = 0;
             if (shouldShow) {
                 return game;

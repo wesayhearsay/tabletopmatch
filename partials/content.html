@@ -37,12 +37,13 @@
 				<img src="img/thumb_{{game.image}}" class="game-img" />
 				<div class="details caption">
 					<p class="game-name">{{game.name}}</p>
-					<p class="compatibility"></p>
-					<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="{{game.compatRating}}" aria-valuemin="0" aria-valuemax="100" style="width: {{game.compatRating}}%;">{{game.compatRating}}
-  </div>
-</div>
-				</div>
+					<div class="progress"> <!-- compatibility rating bar-->
+  						<div class="progress-bar {{progressBarColor}}" role="progressbar" aria-valuenow="{{game.compatRating}}" 
+  						aria-valuemin="0" aria-valuemax="100" style="width: {{game.compatRating}}%;">
+  						{{game.compatRating}}%
+  						</div> 
+					</div><!-- end progress bar-->
+				</div> <!-- end details-->
 			</a> 
 		</div><!-- end .game-card -->
 	</div><!-- end #matches -->
