@@ -259,8 +259,8 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
         $scope.percent = 100 * (value / $scope.max);
     };
 
-    $scope.addToLibrary = function(gameID){
-        userService.addToLibrary(gameID);
+    $scope.addToLibrary = function(gameID, gameName, gameImage){
+        userService.addToLibrary(gameID, gameName, gameImage);
         $scope.inLibrary = true; 
         $scope.justAdded = true; 
 
@@ -309,4 +309,10 @@ if (!userService.isInitialized()) {
 
     $scope.library = userService.getLibrary();
     console.log("$scope.library in userLibrary controller " + $scope.library);
+
+     //if a game is pressed, it routs it to the game view
+    $scope.show = function(gameID){
+        console.log(gameID);
+        $location.path(':'+ gameID);
+    }
 });

@@ -6,7 +6,7 @@
             <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
         </div><!-- end {{game.name}} div -->
         <div class="col-sm-6 col-md-6 col-lg-6 add-to-library">
-            <button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id)" ng-hide="inLibrary">Add to my Library</button>
+            <button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id, game.name, game.image)" ng-hide="inLibrary">Add to my Library</button>
             <p class="alert alert-success" ng-show="justAdded"><span class="glyphicon glyphicon-ok"></span> Game Added to Your Library</p>
             <p class="alert alert-success" ng-show="already"><span class="glyphicon glyphicon-ok"></span> Game in Library</p>
             <button class="btn btn-sm btn-default" ng-show="inLibrary" ng-click="removeFromLibrary(game.id)">Remove from Library</button>
