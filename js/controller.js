@@ -138,7 +138,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
                 }
             }
             matchingRating = 100*(matchingTags/$scope.filterText.length);
-            game.compatRating = matchingRating;
+            game.compatRating = Math.ceil(matchingRating);
             matchingTags = 0;
             if (shouldShow) {
                 return game;
