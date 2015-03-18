@@ -36,11 +36,15 @@
  * Top navigation
  * Hide default border to remove 1px line.
  */
+  .logo {
+	width: 40%;
+}
+
  .navbar-fixed-top {
  	border: 0;
  }
  .navbar {
- 	background: #f9f9f9;
+ 	background: #000000;
  	border-bottom: 1px solid #e5e5e5;
  }
 
