@@ -286,18 +286,22 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
     }else {
         $scope.inLibrary=false;
         console.log("I'm in false");
+        $scope.rate = 0;
     }
     // in case the games has already been included, and there is an gameID in the route
     if ($id && gamesService.isInitialized()) {
         //the current scope gets the array that is associated with that particular question
         $scope.game = gamesService.get($id);
     }
-    $scope.rate = 7;
-    $scope.max = 10;
+
+    $scope.rate = function(value){
+        userService.addRating(value);
+    }
+    $scope.max = 5;
     $scope.isReadonly = false;
     $scope.hoveringOver = function(value) {
         $scope.overStar = value;
-        $scope.percent = 100 * (value / $scope.max);
+        $scope.percent = value;
     };
 
     $scope.addToLibrary = function(gameID, gameName, gameImage){
