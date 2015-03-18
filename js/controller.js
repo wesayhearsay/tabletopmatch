@@ -125,13 +125,21 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
         $scope.filterText = questionsService.get();
         var totalTags = $scope.filterText.length;
         var shouldShow = false;
+        var matchingTags = 0;
+        var matchingRating = 0;
+        console.log("filter:",$scope.filterText);
         if (totalTags > 0) {
             for(var k=0; k<game.attributes.length; k++){    
                 if ($.inArray(game.attributes[k].name, $scope.filterText) >= 0){
+                    console.log(game.name + " matches by " + game.attributes[k].name);
+                    matchingTags++;
                     shouldShow = true;
                     //return;
                 }
             }
+            matchingRating = 100*(matchingTags/$scope.filterText.length);
+            game.compatRating = matchingRating;
+            matchingTags = 0;
             if (shouldShow) {
                 return game;
             } else {
