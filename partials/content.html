@@ -38,7 +38,7 @@
 				<div class="details caption">
 					<p class="game-name">{{game.name}}</p>
 					<div class="progress"> <!-- compatibility rating bar-->
-  						<div class="progress-bar {{progressBarColor}}" role="progressbar" aria-valuenow="{{game.compatRating}}" 
+  						<div ng-class='progBarColor(game.compatRating)' role="progressbar" aria-valuenow="{{game.compatRating}}" 
   						aria-valuemin="0" aria-valuemax="100" style="width: {{game.compatRating}}%;">
   						{{game.compatRating}}%
   						</div> 

@@ -138,23 +138,26 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
                     //return;
                 }
             }
-            matchingRating = 100*(matchingTags/$scope.filterText.length);
-            game.compatRating = Math.ceil(matchingRating);
-            if (game.compatRating<33) {
-                $scope.progressBarColor = "progress-bar-danger";
-            }else if (game.compatRating>=33 && game.compatRating<66) {
-                $scope.progressBarColor = "progress-bar-warning";
-            }else if (game.compatRating>=66) {
-                $scope.progressBarColor = "progress-bar-success";
-            };
+            matchingRating = 100*(matchingTags/game.attributes.length);
+            game.compatRating = Math.ceil(matchingRating)+10;
+            
             matchingTags = 0;
             if (shouldShow) {
                 return game;
             } else {
-                return;
+                return game;
             }
         }
             return game;
+    }
+    $scope.progBarColor = function(percent){
+        if (percent<33) {
+            return "progress-bar progress-bar-danger";
+        }else if (percent>=33 && percent<66) {
+            return "progress-bar progress-bar-warning";
+        }else if (percent>=66) {
+            return "progress-bar progress-bar-success";
+        };
     }
 
     // filter games based on the number of players
