@@ -310,7 +310,7 @@ controllersModule.controller('filterController', function($scope, filterService)
 });
 
 
-controllersModule.controller('userLibrary', function($scope, $http, userService) {
+controllersModule.controller('userLibrary', function($scope, $http, userService, $location) {
 if (!userService.isInitialized()) {
     $http.get("js/users.json").success(function(data) {
            //the questionaire variable is set with the data gotten from the call
