@@ -36,4 +36,27 @@ filtersModule.filter("complexityFilter", function(){
         }
 
     }
-})
+});
+
+filtersModule.filter("ratingFilter", function(){
+    return function(value){
+    switch(value) {
+            case 1: 
+                return 'hated it';
+               break;
+            case 2: 
+                return 'kinda bad';
+                break;
+            case 3: 
+                return 'meh';
+                break;
+            case 4: 
+                return 'good game';
+                break;
+            case 5: 
+                return 'awesome';
+                break;
+        }       
+
+    }
+});
