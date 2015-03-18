@@ -259,8 +259,10 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
     if(userService.find($id)){
         $scope.inLibrary=true;
         $scope.already = true;
+        console.log("I'm in true");
     }else {
         $scope.inLibrary=false;
+        console.log("I'm in false");
     }
     // in case the games has already been included, and there is an gameID in the route
     if ($id && gamesService.isInitialized()) {

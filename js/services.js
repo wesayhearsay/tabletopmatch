@@ -175,7 +175,7 @@ serviceModule.service('userService', function(){
         },
         removeFromLibrary: function(id){
              for (var i = 0; i < library.length; i++) {
-                if (library[i] === id) {
+                if (library[i].id === id) {
                     library.splice(i,1);
                     console.log(library);
                 }
@@ -183,7 +183,7 @@ serviceModule.service('userService', function(){
         },
         find: function(id){
              for (var i = 0; i < library.length; i++) {
-                if (library[i] === id) {
+                if (library[i].id === id) {
                     return true;
                 }
             }
