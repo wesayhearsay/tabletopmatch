@@ -36,9 +36,9 @@
  * Top navigation
  * Hide default border to remove 1px line.
  */
-  .logo {
-	width: 40%;
-}
+ .logo {
+ 	width: 40%;
+ }
 
  .navbar-fixed-top {
  	border: 0;
@@ -141,7 +141,7 @@
  }
 
  .complexity-icon-all {
-	font-size: 3.5rem;
+ 	font-size: 3.5rem;
  }
 
  /* Sidebar navigation */
@@ -161,10 +161,10 @@
  	background-color: #428bca;
  }
 
-.questionSkip{
-  float: right;
+ .questionSkip{
+ 	float: right;
 
-}
+ }
 
 /*
  * Main content
@@ -214,12 +214,53 @@
 
  .page-heading {
  	margin-top: 0;
-  margin-bottom: 2rem;
+ 	margin-bottom: 2rem;
  }
 
  .games-filter-number {
  	font-size: 18px;
  	font-size: 1.8rem;
+ }
+
+ .question-filter {
+ 	padding-bottom: 5rem;
+ }
+
+ .question-navigation-back,
+ .question-navigation-skip {
+ 	font-size: 1.4rem;
+ 	padding: 5rem 0;
+ }
+
+ .question-navigation-skip {
+ 	padding-left: 3rem;
+ }
+
+ .question-navigation-back {
+ 	padding-right: 3rem;
+ }
+
+ .question-link-back {
+ 	float: right;
+ }
+
+ .question-link-back,
+ .question-link-skip {
+
+ }
+
+ .question-link-text {
+ 	display: none;
+ }
+
+ @media (min-width: 728px) {
+ 	.question-link-text {
+ 		display: inline;
+ 	}
+ }
+
+ .question-text {
+ 	margin: 1rem 1rem 3rem 1rem;
  }
 
  .row-games {
@@ -238,38 +279,38 @@
  }
 
  .game-name {
-  text-align: center;
+ 	text-align: center;
  }
 
-.thumbnail {
-	border-color: #e5e5e5;
-	padding: 0;
-}
+ .thumbnail {
+ 	border-color: #e5e5e5;
+ 	padding: 0;
+ }
 
-a.thumbnail:hover,
-a.thumbnail:focus,
-a.thumbnail.active {
-	border-color: #EB7B59;
-}
+ a.thumbnail:hover,
+ a.thumbnail:focus,
+ a.thumbnail.active {
+ 	border-color: #EB7B59;
+ }
 
-.progress {
-  margin-bottom: 0;
-}
-.progress-bar {
-  box-shadow: none;
-}
-.progress-bar-success,
-.label-success {
-  background-color: #3EA571;
-}
-.progress-bar-warning,
-.label-warning {
-  background-color: #ebc559;
-}
-.progress-bar-danger,
-.label-danger {
-  background-color: #eb597f;
-}
+ .progress {
+ 	margin-bottom: 0;
+ }
+ .progress-bar {
+ 	box-shadow: none;
+ }
+ .progress-bar-success,
+ .label-success {
+ 	background-color: #3EA571;
+ }
+ .progress-bar-warning,
+ .label-warning {
+ 	background-color: #ebc559;
+ }
+ .progress-bar-danger,
+ .label-danger {
+ 	background-color: #eb597f;
+ }
 
 /*.gameInstance {
 

@@ -26,40 +26,46 @@
 	<a href="#" class="accordion-filter-toggle" ng-hide="showAcordeon===1" ng-click="showAcordeon = 1">
 	<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Show me the advanced filters</a>
 		
-	</div> --><!-- end ng-controller -->
+</div> --><!-- end ng-controller -->
 
-	<div id="matches" class="row-games">
-		<h2 class="page-heading">Games <span class="games-filter-number">({{filteredGames.length}})</span></h2>
-		
-		<div id="questionsFilter" class="sidebar-filter">
-				
-				<span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true" ng-click="changeQuestion(0)"></span>
-				<span ng-click="changeQuestion(0)">Back</span>
-				<span class="glyphicon glyphicon glyphicon-chevron-right questionSkip" aria-hidden="true" ng-click="changeQuestion(1)"></span>
-				<span class="questionSkip" ng-click="changeQuestion(1)">Skip</span>
-				<h3 class="sidebar-heading">Would you like to play a game {{questionModel[questionNumber].question}}</h3>
-				<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-					<a href="#" class="btn btn-default" role="button" ng-click="includeTags(1)">YES</a>
-					<a href="#" class="btn btn-default" role="button" ng-click="includeTags(0)">NO</a>
-				</div><!-- end btn-group -->
-			</div><!-- end #questionsFilter -->
+<div id="matches" class="row-games">
+	<h2 class="page-heading">Games <span class="games-filter-number">({{filteredGames.length}})</span></h2>
+
+	<div id="questionsFilter" class="row question-filter">
+		<a href="#" class="col-xs-2 col-sm-3 col-md-3 col-lg-3 question-navigation-back">
+			<span class="question-link-back" ng-click="changeQuestion(0)">
+				<span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true" ng-click="changeQuestion(0)"></span> <span class="question-link-text">Back</span>
+			</span>
+		</a>
+		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
+			<p class="question-text">Would you like to play a game {{questionModel[questionNumber].question}}</p>
+			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+				<a href="#" class="btn btn-default" role="button" ng-click="includeTags(1)">Yes</a>
+				<a href="#" class="btn btn-default" role="button" ng-click="includeTags(0)">Nope</a>
+			</div><!-- end btn-group -->
+		</div>
+		<a href="#" class="col-xs-2 col-sm-3 col-md-3 col-lg-3 question-navigation-skip">
+			<span class="question-link-skip" ng-click="changeQuestion(1)"><span class="question-link-text">Skip</span> <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true" ng-click="changeQuestion(0)"></span>
+			</span>
+		</a>
+	</div><!-- end #questionsFilter -->
 
 
-		<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-		<div ng-repeat="game in filteredGames = (games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering | filter:complexityFiltering | orderBy:'-compatRating') " class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-3">
-			<a href class="thumbnail" ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
-				<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
-				<img src="img/thumb_{{game.image}}" class="game-img" />
-				<div class="details caption">
-					<p class="game-name">{{game.name}}</p>
-					<div class="progress"> <!-- compatibility rating bar-->
-  						<div ng-class='progBarColor(game.compatRating)' role="progressbar" aria-valuenow="{{game.compatRating}}" 
-  						aria-valuemin="0" aria-valuemax="100" style="width: {{game.compatRating}}%;">
-  						{{game.compatRating}}%
-  						</div> 
-					</div><!-- end progress bar-->
-				</div> <!-- end details-->
-			</a> 
-		</div><!-- end .game-card -->
-	</div><!-- end #matches -->
+	<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
+	<div ng-repeat="game in filteredGames = (games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering | filter:complexityFiltering | orderBy:'-compatRating') " class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-3">
+		<a href class="thumbnail" ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
+			<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
+			<img src="img/thumb_{{game.image}}" class="game-img" />
+			<div class="details caption">
+				<p class="game-name">{{game.name}}</p>
+				<div class="progress"> <!-- compatibility rating bar-->
+					<div ng-class='progBarColor(game.compatRating)' role="progressbar" aria-valuenow="{{game.compatRating}}" 
+					aria-valuemin="0" aria-valuemax="100" style="width: {{game.compatRating}}%;">
+					{{game.compatRating}}%
+				</div> 
+			</div><!-- end progress bar-->
+		</div> <!-- end details-->
+	</a> 
+</div><!-- end .game-card -->
+</div><!-- end #matches -->
 </div><!-- end .main -->
