@@ -94,9 +94,9 @@ controllersModule.controller('sidebarController', function($scope, playerService
             questionsService.set($scope.questionNumber); //the service has the array of the tags the user has selected via the questions.
         }
         if($scope.questionNumber<$scope.questionModel.length-1){
-            $scope.questionNumber++; 
-        }else{
-            $scope.questionNumber=0;
+                $scope.questionNumber++; 
+            }else{
+                $scope.questionNumber=0;
         }
     }
     $scope.changeQuestion = function(direction){

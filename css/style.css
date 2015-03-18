@@ -157,6 +157,10 @@
  	background-color: #428bca;
  }
 
+.questionSkip{
+  float: right;
+
+}
 
 /*
  * Main content
