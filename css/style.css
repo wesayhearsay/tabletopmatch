@@ -44,7 +44,7 @@
  	border: 0;
  }
  .navbar {
- 	background: #000000;
+ 	background: #f9f9f9;
  	border-bottom: 1px solid #e5e5e5;
  }
 
@@ -250,6 +250,25 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
 	border-color: #EB7B59;
+}
+
+.progress {
+  margin-bottom: 0;
+}
+.progress-bar {
+  box-shadow: none;
+}
+.progress-bar-success,
+.label-success {
+  background-color: #3EA571;
+}
+.progress-bar-warning,
+.label-warning {
+  background-color: #ebc559;
+}
+.progress-bar-danger,
+.label-danger {
+  background-color: #eb597f;
 }
 
 /*.gameInstance {
