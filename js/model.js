@@ -339,7 +339,7 @@ var tagsToShow = 3;
 var questions = [
 
 {   "question" : "based in a fantasy world?", 
-    "tags" : ["fantasy","Mythology"]
+    "tags" : ["Fantasy","Mythology"]
 },
 
 {   "question" : "about building/managing trains?", 

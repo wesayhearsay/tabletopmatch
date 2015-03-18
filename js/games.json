@@ -28,7 +28,10 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	,
+    "compatRating": "100"
 }, {
     "id": "3",
     "name": "Conquest of Planet Earth",
@@ -71,7 +74,11 @@
     }, {
         "name": "Science fiction",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	,
+    "compatRating": "100"
+	
 }, {
     "id": "4",
     "name": "Tobago",
@@ -117,7 +124,11 @@
     }, {
         "name": "Murder \/ mistery",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	,
+    "compatRating": "100"
+	
 }, {
     "id": "5",
     "name": "The Settlers of Catan",
@@ -151,7 +162,9 @@
     }, {
         "name": "Agricol",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "6",
     "name": "Tempus",
@@ -194,7 +207,11 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	,
+    "compatRating": "100"
+	
 }, {
     "id": "7",
     "name": "Star Wars LCG",
@@ -237,7 +254,9 @@
     }, {
         "name": "Science fiction",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "8",
     "name": "Dixit",
@@ -271,7 +290,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "9",
     "name": "Dixit Odyssey",
@@ -305,7 +326,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "10",
     "name": "Saboteur",
@@ -345,7 +368,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "11",
     "name": "Saboteur 2 ",
@@ -385,7 +410,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "12",
     "name": "Citadels",
@@ -419,7 +446,9 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "13",
     "name": "Citadels: The Dark City",
@@ -453,7 +482,9 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "14",
     "name": "Ticket to ride",
@@ -487,7 +518,9 @@
     }, {
         "name": "Historical",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "15",
     "name": "Ticket to ride: Europe",
@@ -524,7 +557,9 @@
     }, {
         "name": "20th century",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "16",
     "name": "Ticket to Ride: USA 1910",
@@ -561,7 +596,9 @@
     }, {
         "name": "20th century",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "17",
     "name": "Small World",
@@ -595,7 +632,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "18",
     "name": "A Game of Thrones",
@@ -644,7 +683,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "19",
     "name": "Jungle Speed",
@@ -672,7 +713,9 @@
     }, {
         "name": "Environmental",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "20",
     "name": "7 Wonders",
@@ -700,7 +743,9 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "21",
     "name": "Power Grid",
@@ -731,7 +776,9 @@
     }, {
         "name": "Economic simulation",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "22",
     "name": "Catan: card game",
@@ -768,7 +815,9 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "23",
     "name": "Catan: Cities & Knights",
@@ -805,7 +854,9 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "24",
     "name": "Risk",
@@ -857,7 +908,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "25",
     "name": "Catan: Seafarers",
@@ -903,7 +956,9 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "26",
     "name": "Agricola",
@@ -943,7 +998,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "27",
     "name": "Battlestar Galactica",
@@ -986,7 +1043,9 @@
     }, {
         "name": "Science fiction",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "28",
     "name": "Dominion",
@@ -1017,7 +1076,9 @@
     }, {
         "name": "Medieval",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 },  {
     "id": "34",
     "name": "Whist",
@@ -1051,7 +1112,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "35",
     "name": "Poker",
@@ -1082,7 +1145,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "36",
     "name": "Canasta",
@@ -1125,7 +1190,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "37",
     "name": "Rummy",
@@ -1174,7 +1241,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "38",
     "name": "Barbut (HAZARD)",
@@ -1199,7 +1268,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "39",
     "name": "Jenga",
@@ -1224,7 +1295,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "40",
     "name": "Chess",
@@ -1249,7 +1322,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "41",
     "name": "Backgammon ",
@@ -1277,7 +1352,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "42",
     "name": "Dixit 3",
@@ -1311,7 +1388,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "43",
     "name": "Ludo",
@@ -1354,7 +1433,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "44",
     "name": "Monopoly",
@@ -1397,7 +1478,9 @@
     }, {
         "name": "20th century",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "45",
     "name": "Scrabble",
@@ -1434,7 +1517,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "46",
     "name": "Shadows over Camelot",
@@ -1483,7 +1568,9 @@
     }, {
         "name": "Mythology",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "47",
     "name": "Archaeology",
@@ -1523,7 +1610,9 @@
     }, {
         "name": "Ancient",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "48",
     "name": "Fluxx: Zombie",
@@ -1551,7 +1640,9 @@
     }, {
         "name": "Zombies",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "49",
     "name": "Small World Underground",
@@ -1585,7 +1676,9 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "50",
     "name": "Firefly: The Game",
@@ -1634,7 +1727,9 @@
     }, {
         "name": "Space exploration",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "51",
     "name": "Buzz it",
@@ -1662,7 +1757,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "52",
     "name": "Civilization",
@@ -1708,7 +1805,9 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "53",
     "name": "Puerto Rico",
@@ -1739,7 +1838,9 @@
     }, {
         "name": "Agricol",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "54",
     "name": "Activity",
@@ -1779,7 +1880,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "55",
     "name": "Twilight Struggle ",
@@ -1825,7 +1928,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "56",
     "name": "Android: Netrunner ",
@@ -1862,7 +1967,9 @@
     }, {
         "name": "Science fiction",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "57",
     "name": "Tzolk'in: The Mayan Calendar ",
@@ -1905,7 +2012,9 @@
     }, {
         "name": "Civilization",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "58",
     "name": "Mage Knight Board Game",
@@ -1957,7 +2066,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "59",
     "name": "Pandemic",
@@ -2075,7 +2186,9 @@
     }, {
         "name": "Environmental",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "60",
     "name": "Summoner Wars: Master Set",
@@ -2106,7 +2219,9 @@
     }, {
         "name": "Fantasy",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "61",
     "name": "Twilight Imperium",
@@ -2158,7 +2273,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "62",
     "name": "War of the Ring",
@@ -2198,7 +2315,9 @@
     }, {
         "name": "Area control",
         "type": "mechanics"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "63",
     "name": "Story Cubes: Voyages",
@@ -2235,7 +2354,9 @@
     }, {
         "name": "Educational",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "64",
     "name": "Battle Line",
@@ -2272,7 +2393,9 @@
     }, {
         "name": "Ancient",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "65",
     "name": "Bang! The Bullet!",
@@ -2312,7 +2435,9 @@
     }, {
         "name": "Historical",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "66",
     "name": "Qwirkle",
@@ -2403,7 +2528,9 @@
     }, {
         "name": "abstract",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }, {
     "id": "67",
     "name": "Grass",
@@ -2431,5 +2558,8 @@
     }, {
         "name": "20th century",
         "type": "theme"
-    }]
+    }],
+    "compatRating": "100"
+	
 }]
+	
