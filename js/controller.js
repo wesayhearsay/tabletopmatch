@@ -356,20 +356,24 @@ if (!userService.isInitialized()) {
     $scope.shelves = userService.getShelves();
     $scope.newShelfName = '';
     $scope.createShelf = function(){
-        var newShelf = {
-            'id' : $scope.shelves.length,
-            'name' : $scope.newShelfName
-        };
-        $scope.shelves.push(newShelf);
-        $scope.newShelfName = '';
-        console.log($scope.shelves);
+        if($scope.newShelfName !=""){    
+            var newShelf = {
+                'id' : $scope.shelves.length,
+                'name' : $scope.newShelfName
+            };
+            $scope.shelves.push(newShelf);
+            $scope.newShelfName = '';
+            console.log($scope.shelves);
+        }else{
+            console.log("poop");
+        }
     };
     $scope.dropSuccessHandler = function($event,index,array){
     };
     $scope.onDrop = function($event,$data,array,destinationID){
         $scope.droppedGame = $data;
         for(var i=0; i<$scope.library.length; i++){
-            if($scope.library[i].id===$data.id){
+            if($scope.library[i].id===$data.id && destinationID!=0){
                 $scope.library[i].shelfID=destinationID;
             }
         }
