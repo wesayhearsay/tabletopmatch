@@ -394,8 +394,6 @@ if (!userService.isInitialized()) {
             return ;
         }
     };
-    drawStats($scope.library);
-
 });
 
 controllersModule.controller('loginController', function($scope, $http, $location, loginService) {
