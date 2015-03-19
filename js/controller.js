@@ -361,8 +361,14 @@ if (!userService.isInitialized()) {
         console.log(gameID);
         $location.path(':'+ gameID);
     }
+    $scope.dropSuccessHandler = function($event,index,array){
+            console.log("it was a drag!");
+    };
+    $scope.onDrop = function($event,$data,array){
+        $scope.droppedGame = $data;
+        console.log("something was dropped!");
+    };
 });
-
 
 controllersModule.controller('loginController', function($scope, $http, $location, loginService) {
     $scope.logged = loginService.get();

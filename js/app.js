@@ -2,7 +2,7 @@
 
 /*main module definition*/
 var ttmatch = angular.module("ttmatchApp", ["ui.router", "ngTouch", "ui-rangeSlider",
-    "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters", "ui.bootstrap"]);
+    "ttmatchApp.Controllers",  "ttmatchApp.Services", "ttmatchApp.Directives", "ttmatchApp.Filters", "ui.bootstrap", "ang-drag-drop"]);
 
 ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
