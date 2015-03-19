@@ -115,16 +115,16 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     //add to library
     $scope.addToLibrary = function(gameID, gameName, gameImage, shelfID){
         userService.addToLibrary(gameID, gameName, gameImage, shelfID);
-        $scope.inLibrary = true; 
-        $scope.already = true; 
     }
     $scope.removeFromLibrary = function(gameID){
         userService.removeFromLibrary(gameID);
-        $scope.inLibrary = false;
-         $scope.already = false;
-   }
-
-        //Question filter
+    }
+    $scope.inLibrary = function(gameID){
+        var exists = false;
+        exists = userService.find(gameID);
+        return exists;
+    }
+    //Question filter
     $scope.questionNumber = 0;
     $scope.questionModel = questions;
     $scope.includeTags = function (shouldInclude) {
