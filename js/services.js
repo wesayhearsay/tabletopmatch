@@ -190,3 +190,19 @@ serviceModule.service('userService', function(){
         }
     };
 });
+
+// service for the login/logout
+serviceModule.service('loginService', function() {
+    var loggedin = false; // default logged out
+    return {
+        get: function(){
+            return loggedin;
+        },
+        set: function(){
+            return loggedin = true;
+        },
+        unset: function(){
+            return loggedin = false;
+        }
+    }; 
+});

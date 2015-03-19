@@ -54,5 +54,14 @@ ttmatch.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,
                     controller: "GameController"
                 }
             }
-        });
+        })
+        .state('home.login', {
+            url: 'login',
+            views: {
+                'content@': {
+                    templateUrl: "partials/login.html",
+                    controller: "loginController"
+                }
+            }
+        });      
 }]);

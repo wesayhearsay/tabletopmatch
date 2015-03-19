@@ -362,3 +362,13 @@ if (!userService.isInitialized()) {
         $location.path(':'+ gameID);
     }
 });
+
+
+controllersModule.controller('loginController', function($scope, $http, $location, loginService) {
+//if the user logs in, we store the state in a variable
+    $scope.login = function() {
+        $scope.loggedin = loginService.get();
+        loginService.set(); // set loggedin to true
+        $location.path(':'); // change location to the home
+    }
+});
