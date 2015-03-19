@@ -367,6 +367,65 @@ a.thumbnail.active {
 *	_5 = Library
 **************************/
 
+.shelf {
+	border-radius: 4px;
+	padding: 0px 2rem;
+	margin: 3rem 0px;
+	border: 1px solid #EB7B59;
+	border: 1px solid rgba(235, 123, 89, 0.8);
+	transition: all 0.3s ease-in-out;
+}
+
+.shelf-label {
+	margin: 2rem 0;
+}
+
+.on-drag-enter {
+	background: rgba(235,123,89, 0.9); /* orange */
+	border: 1px dashed #e5e5e5;
+}
+
+.on-drag-enter .shelf-label {
+	color: #ffffff;
+}
+
+.on-drag-enter.on-drag-hover {
+	background: rgba(62,165,113, 0.9); /* green */
+}
+
+.drop-forbidden {
+	display: none;
+	font-size: 1.6rem;
+}
+
+#shelf-0.on-drag-enter.on-drag-hover {
+	background: rgba(235,89,127, 0.9);
+}
+#shelf-0.on-drag-enter.on-drag-hover .drop-forbidden {
+	display: inline;
+}
+
+.game-move:hover, .game-move:focus, .game-move:active {
+	cursor: move;
+}
+
+.shelf-input {
+	margin: 1rem 0;
+	padding: 0.5rem;
+}
+
+.shelf-new-button {
+	background: #EB7B59;
+	background: none repeat scroll 0% 0% rgb(235,123,89);
+	color: #FFF;
+	padding: 1rem 1.5rem;
+	border-radius: 4px;
+}
+
+.shelf-new-button:hover, .shelf-new-button:active, .shelf-new-button:focus {
+	cursor: pointer;
+}
+
 /**************************
 *	_6 = RangeSlider
 **************************/
