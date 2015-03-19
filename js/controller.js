@@ -375,8 +375,6 @@ if (!userService.isInitialized()) {
             $scope.shelves.push(newShelf);
             $scope.newShelfName = '';
             console.log($scope.shelves);
-        }else{
-            console.log("poop");
         }
     };
     $scope.dropSuccessHandler = function($event,index,array){
@@ -396,7 +394,7 @@ if (!userService.isInitialized()) {
             return ;
         }
     };
-    drawStats();
+    drawStats($scope.library);
 
 });
 
