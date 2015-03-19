@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top" ng-controller="loginController">
 		<div class="navbar-header col-md-3 col-lg-3">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
@@ -11,8 +11,9 @@
 		<div id="navbar" class="navbar-collapse collapse col-md-3 col-lg-3">
 			<ul class="nav navbar-nav ">
 				<li><a href="#/">Games</a></li>
-				<li><a href="#/profile">My Library</a></li>
-				<li><a href="#">Logout</a></li>
+				<li><a href="#/profile" ng-show="logged">My Library</a></li>
+				<li><a href="#" ng-show="logged" ng-click="logout()">Logout</a></li>
+				<li><a href="#/profile" ng-hide="logged" ng-click="login()">Login</a></li>
 			</ul>
 		</div><!-- end #navbar -->
 </nav>

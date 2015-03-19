@@ -198,11 +198,8 @@ serviceModule.service('loginService', function() {
         get: function(){
             return loggedin;
         },
-        set: function(){
-            return loggedin = true;
-        },
-        unset: function(){
-            return loggedin = false;
+        set: function(value){
+            return (loggedin = value);
         }
     }; 
 });

@@ -365,10 +365,12 @@ if (!userService.isInitialized()) {
 
 
 controllersModule.controller('loginController', function($scope, $http, $location, loginService) {
-//if the user logs in, we store the state in a variable
+    $scope.logged = loginService.get();
     $scope.login = function() {
-        $scope.loggedin = loginService.get();
-        loginService.set(); // set loggedin to true
-        $location.path(':'); // change location to the home
+        $scope.logged = loginService.set(true);
+    }
+
+    $scope.logout = function() {
+        $scope.logged = loginService.set(false); // set loggedin to false
     }
 });
