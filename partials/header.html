@@ -10,10 +10,11 @@
 		</div><!-- end .navbar-header -->
 		<div id="navbar" class="navbar-collapse collapse col-md-3 col-lg-3">
 			<ul class="nav navbar-nav ">
-				<li><a href="#/">Games</a></li>
-				<li><a href="#/profile" ng-show="logged">My Library</a></li>
-				<li><a href="#" ng-show="logged" ng-click="logout()">Logout</a></li>
-				<li><a href="#/profile" ng-hide="logged" ng-click="login()">Login</a></li>
+				<li><a href="#/" title="Games">Games</a></li>
+				<li><a href="#/profile" title="My library" ng-show="logged">My library</a></li>
+				<li><a href="#" title="Logout" ng-show="logged" ng-click="logout()">Logout</a></li>
+				<li><a href="#/profile" title="Login" ng-hide="logged" ng-click="login()">Login</a></li>
+				<li><a href="#" title="Sign Up" ng-hide="logged">Sign Up</a></li>
 			</ul>
 		</div><!-- end #navbar -->
 </nav>
