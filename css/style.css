@@ -251,36 +251,8 @@ a {
 
 .question-text {
 	margin: 1rem 1rem 3rem 1rem;
-	min-height: 6rem;
 }
 
-.btn-yes, .btn-no {
-	color: #ffffff;
-	border: none;
-}
-
-.btn-yes {
-	background-color: #EB7B59;
-	background-color: rgba(235,123,89, 0.9);
-	border-right: 1px solid #E5E5E5;
-}
-.btn-no {
-	background: #283340;
-	background: rgba(40, 51, 64, 0.9);
-}
-
-.btn-yes:hover, .btn-yes:active, .btn-yes:focus,
-.btn-no:hover, .btn-no:active, .btn-no:focus {
-	color: #ffffff;	
-}
-
-.btn-yes:hover, .btn-yes:active, .btn-yes:focus {
-	background-color: rgba(235,123,89, 1);
-}
-
-.btn-no:hover, .btn-no:active, .btn-no:focus {
-	background: rgba(40, 51, 64, 1);
-}
 
 .game-card {
 	float: none;
