@@ -1,5 +1,5 @@
 
-function drawStats(){
+function drawStats(gameLibrary){
 
  var svg = d3.select("#profileSidebar").append("svg")
                 .attr("width", 200)
