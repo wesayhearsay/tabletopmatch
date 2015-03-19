@@ -87,7 +87,7 @@ controllersModule.controller('sidebarController', function($scope, playerService
     }
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, gamesService, filterService, playerService, ageService, timeService, complexityService, questionsService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, userService, gamesService, filterService, playerService, ageService, timeService, complexityService, questionsService) {
     //checks if the games.json has ever been accessed before.
     //this is done so that the json is not included every time 
     if (!gamesService.isInitialized()) {
@@ -113,6 +113,17 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     }
 
 
+    //add to library
+    $scope.addToLibrary = function(gameID, gameName, gameImage, shelfID){
+        userService.addToLibrary(gameID, gameName, gameImage, shelfID);
+        $scope.inLibrary = true; 
+        $scope.already = true; 
+    }
+    $scope.removeFromLibrary = function(gameID){
+        userService.removeFromLibrary(gameID);
+        $scope.inLibrary = false;
+         $scope.already = false;
+    }
         //Question filter
     $scope.questionNumber = 0;
     $scope.questionModel = questions;
