@@ -162,9 +162,9 @@ serviceModule.service('userService', function(){
             //if the games variable is not equal to null, returns true
             return ( user != null);
         }, 
-        addToLibrary: function(id, name, image){
-            console.log(name);
-             library.push({'id' : id, 'name': name, 'image':image});
+        addToLibrary: function(id, name, image, shelfID){
+            console.log(shelfID);
+             library.push({'id' : id, 'name': name, 'image':image, 'shelfID':shelfID});
              // library.push(id)
              added = true;
              inLibrary = true;

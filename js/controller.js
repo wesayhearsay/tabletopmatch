@@ -305,8 +305,8 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
         $scope.percent = value;
     };
 
-    $scope.addToLibrary = function(gameID, gameName, gameImage){
-        userService.addToLibrary(gameID, gameName, gameImage);
+    $scope.addToLibrary = function(gameID, gameName, gameImage, shelfID){
+        userService.addToLibrary(gameID, gameName, gameImage, shelfID);
         $scope.inLibrary = true; 
         $scope.justAdded = true; 
 
@@ -352,15 +352,28 @@ if (!userService.isInitialized()) {
             console.log(JSON.stringify($http.get("js/user.json")));
         });
     }
-
+    
     $scope.library = userService.getLibrary();
     console.log("$scope.library in userLibrary controller " + $scope.library);
 
-     //if a game is pressed, it routs it to the game view
+    //if a game is pressed, it routs it to the game view
     $scope.show = function(gameID){
         console.log(gameID);
         $location.path(':'+ gameID);
     }
+
+    $scope.shelves = [];
+    $scope.newShelfName = '';
+    $scope.createShelf = function(){
+        var newShelf = {
+            'id' : $scope.shelves.length,
+            'name' : $scope.newShelfName,
+            'games' : []
+        };
+        $scope.shelves.push(newShelf);
+        $scope.newShelfName = '';
+        //console.log($scope.shelves);
+    };
     $scope.dropSuccessHandler = function($event,index,array){
             console.log("it was a drag!");
     };
@@ -368,6 +381,14 @@ if (!userService.isInitialized()) {
         $scope.droppedGame = $data;
         console.log("something was dropped!");
     };
+    $scope.shelfFilter = function(game) {
+        if (game.shelfID == 0) {
+            return game;
+        } else {
+            return ;
+        }
+    };
+
 });
 
 controllersModule.controller('loginController', function($scope, $http, $location, loginService) {
