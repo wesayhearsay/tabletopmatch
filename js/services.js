@@ -179,6 +179,7 @@ serviceModule.service('userService', function(){
    var library = [];
    var added = false;
    var inLibrary = false;
+   var shelves = [{'id':0,'name':'Recently Added'}];
     return {
         //gives the games variable the data (value) that has been gotten from the ajax call
         set: function(value) {
@@ -215,6 +216,9 @@ serviceModule.service('userService', function(){
                     return true;
                 }
             }
+        },
+        getShelves: function(){
+            return shelves;
         }
     };
 });

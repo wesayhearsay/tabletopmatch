@@ -2,19 +2,20 @@
 	<div id="user-library" class="row-games">
 		<h2 class="page-heading">My library <span class="games-filter-number">({{library.length}})</span></h2>
 		<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-		<div>
-		<div>Recently Added</div>
-			<div ng-repeat="game in library | filter:shelfFilter" class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-2" ui-draggable="true" drag="game" on-drop-success="dropSuccessHandler($event,$index,library)">
-				<a href class="thumbnail" ng-click="show(game.id)" ui-sref="home.detail({id: game.id})">
-					<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
-					<img src="img/thumb_{{game.image}}" class="game-img" />
-					<div class="details caption">
-						<p class="game-name">{{game.name}}</p>
-					</div>
-				</a> 
-			</div><!-- end .game-card -->
-		</div> <!-- end .recentlyAdded -->
-		<div ng-repeat="shelf in shelves">{{shelf.name}}</div>
+		<div ng-repeat="(key, shelf) in shelves">
+		<div ui-on-Drop="onDrop($event,$data,[],shelf.id)">
+			<div >{{shelf.name}}</div>
+				<div ng-repeat="game in library | filter:{shelfID: shelf.id}" class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-2" ui-draggable="true" drag="game" on-drop-success="dropSuccessHandler($event,$index,library)">
+					<a href class="thumbnail" ng-click="show(game.id)" ui-sref="home.detail({id: game.id})">
+						<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
+						<img src="img/thumb_{{game.image}}" class="game-img" />
+						<div class="details caption">
+							<p class="game-name">{{game.name}}</p>
+						</div>
+					</a> 
+				</div><!-- end .game-card -->
+			</div> <!-- end .recentlyAdded -->
+		</div>
 		<div>Create New Shelf</div>
 		<input type="text" ng-model="newShelfName"></input>
 		<span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="createShelf()"></span>

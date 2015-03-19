@@ -344,6 +344,7 @@ if (!userService.isInitialized()) {
     }
     
     $scope.library = userService.getLibrary();
+    $scope.currentShelf = 0;
     console.log("$scope.library in userLibrary controller " + $scope.library);
 
     //if a game is pressed, it routs it to the game view
@@ -352,27 +353,29 @@ if (!userService.isInitialized()) {
         $location.path(':'+ gameID);
     }
 
-    $scope.shelves = [];
+    $scope.shelves = userService.getShelves();
     $scope.newShelfName = '';
     $scope.createShelf = function(){
         var newShelf = {
             'id' : $scope.shelves.length,
-            'name' : $scope.newShelfName,
-            'games' : []
+            'name' : $scope.newShelfName
         };
         $scope.shelves.push(newShelf);
         $scope.newShelfName = '';
-        //console.log($scope.shelves);
+        console.log($scope.shelves);
     };
     $scope.dropSuccessHandler = function($event,index,array){
-            console.log("it was a drag!");
     };
-    $scope.onDrop = function($event,$data,array){
+    $scope.onDrop = function($event,$data,array,destinationID){
         $scope.droppedGame = $data;
-        console.log("something was dropped!");
+        for(var i=0; i<$scope.library.length; i++){
+            if($scope.library[i].id===$data.id){
+                $scope.library[i].shelfID=destinationID;
+            }
+        }
     };
     $scope.shelfFilter = function(game) {
-        if (game.shelfID == 0) {
+        if (game.shelfID == $scope.currentShelf) {
             return game;
         } else {
             return ;
