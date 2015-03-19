@@ -264,7 +264,7 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     }
 });
 
-controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService, userService) {
+controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService, userService, loginService) {
     //gets rid of the : character
     var $id =  $stateParams.id;
     $scope.game = gamesService.get($id);
