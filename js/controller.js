@@ -95,14 +95,16 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
     //towards the file that is contained in the same folder as index.html
     $http.get("js/games.json").success(function(data) {
         //the questionaire variable is set with the data gotten from the call
-        // gamesService.set(data);
-        //console.log(data);
+        gamesService.set(data)
         $scope.games = data;
-        //console.log($scope.games);
+        console.log("gets json");
     }).
     error(function() { //if an error occured, the console shows that the json wasn't included
         console.log("json not included");
     });
+    }else { 
+        $scope.games = gamesService.getAll();
+        console.log("gets service");
     }
     //if a game is pressed, it routs it to the game view
     $scope.show = function(gameID){
@@ -265,38 +267,26 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
 controllersModule.controller("GameController", function($scope, $http, $stateParams, gamesService, userService) {
     //gets rid of the : character
     var $id =  $stateParams.id;
-    //checks if the games.json has ever been accessed before.
-    //this is done so that the json is not included every time the question is changed
-    if (!gamesService.isInitialized()) {
-        //if it hasn't been included before, an ajax call is made 
-        //towards the file that is contained in the same folder as index.html
-        $http.get("js/games.json").success(function(data) {
-            //the questionaire variable is set with the data gotten from the call
-            gamesService.set(data);
-            //if in the path there is an array that stands as a attrID (the question name)
-            $scope.game = gamesService.get($id);
-        }).
-        error(function() { //if an error occured, the console shows that the json wasn't included
-            console.log("json not included");
-        });
-    }
+    $scope.game = gamesService.get($id);
+
+    if(gamesService.isRated($id)){
+                console.log("game is rated");
+                $scope.rate = gamesService.getRating($id);
+            }else{
+                console.log("game is not rated");
+                console.log( $scope.game);
+                 $scope.rate = 0;
+                }
+
     if(userService.find($id)){
         $scope.inLibrary=true;
         $scope.already = true;
-        console.log("I'm in true");
     }else {
         $scope.inLibrary=false;
-        console.log("I'm in false");
-        $scope.rate = 0;
-    }
-    // in case the games has already been included, and there is an gameID in the route
-    if ($id && gamesService.isInitialized()) {
-        //the current scope gets the array that is associated with that particular question
-        $scope.game = gamesService.get($id);
     }
 
-    $scope.rate = function(value){
-        userService.addRating(value);
+    $scope.rateNow = function(){
+        gamesService.addRating($id, $scope.rate);
     }
     $scope.max = 5;
     $scope.isReadonly = false;

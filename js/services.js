@@ -4,6 +4,9 @@ var serviceModule = angular.module("ttmatchApp.Services", [])
 serviceModule.service('gamesService', function() {
     var games = null;
     return {
+        getAll: function(){
+            return games;
+        },
         get: function(id) { //gets the question-answers paire based on the id it is given
             for (var i = 0; i < games.length; i++) {
                 if (games[i].id === id) {
@@ -16,10 +19,35 @@ serviceModule.service('gamesService', function() {
             games = value;
         },
         //checks if the function has been called before
-        isInitialized: function(games) {
+        isInitialized: function() {
             //if the games variable is equal to null, returns false
             //if the games variable is not equal to null, returns true
             return (games != null);
+        }, 
+        addRating: function(id, rating){
+            for (var i = 0; i < games.length; i++) {
+                if (games[i].id === id) {
+                    
+                    games[i].userRating = rating;
+                    
+                }
+            }
+        }, 
+        isRated: function(id){
+            for (var i = 0; i < games.length; i++) {
+                if (games[i].id === id) {
+                    if(games[i].userRating!=0)
+                        {return true;}
+                    else {return false;}
+                }
+            }
+        }, 
+        getRating: function(id){
+            for (var i = 0; i < games.length; i++) {
+                if (games[i].id === id) {
+                    return games[i].userRating;
+                }
+            }
         }
     };
 });

@@ -2,8 +2,8 @@
     <div class="row game-detail-name">
         <div class="col-sm-6 col-md-6 col-lg-6">
             <h2 class="page-heading">{{game.name}}</h2>
-            <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ></rating>
-            <span class="label" ng-class="{'label-danger': percent<3, 'label-warning': percent>=3 && percent<4, 'label-success': percent>=4}" ng-show="overStar && !isReadonly">{{percent | ratingFilter}}</span>
+            <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="rateNow()" ></rating>
+            <span class="label" ng-class="{'label-danger': percent<3, 'label-warning': percent>=3 && percent<4, 'label-success': percent>=4}" ng-show="overStar && !isReadonly" >{{percent | ratingFilter}}</span>
         </div><!-- end {{game.name}} div -->
         <div class="col-sm-6 col-md-6 col-lg-6 add-to-library">
             <button class="btn btn-sm btn-default" ng-click="addToLibrary(game.id, game.name, game.image, 0)" ng-hide="inLibrary">Add to my Library</button>
