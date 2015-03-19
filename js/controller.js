@@ -385,6 +385,7 @@ if (!userService.isInitialized()) {
             return ;
         }
     };
+    drawStats();
 
 });
 
