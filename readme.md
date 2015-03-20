@@ -6,7 +6,7 @@
 
 * Willie Bock, NUMBER HERE, <>
 * Diana Lipcanu, NUMBER HERE, <lipcanu@kth.se>
-* Andrés Sierra, NUMBER HERE, <>
+* Andrés Sierra Sierra, 851219-T696, <asierra@kth.se>
 * Francesco Vitale, 901027-T311, <vitale@kth.se>
 
 ## About

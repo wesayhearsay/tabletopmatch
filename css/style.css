@@ -74,6 +74,14 @@ a {
 	}
 }
 
+.navbar-logo {
+	max-width: 4.5rem;
+	float: left;
+	margin-right: 1rem;
+	margin-top: -1.1rem;
+}
+
+
 /**************************
 *	_2 = Sidebar 			
 **************************/
