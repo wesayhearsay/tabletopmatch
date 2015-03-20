@@ -150,6 +150,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
 		}
 	}
 
+	// check if user logged in
+	$scope.logged = loginService.get();
+
 	// accordion tag filtering
 	$scope.tagFilter = function(game) {
 		$scope.filterText = questionsService.get();
@@ -315,6 +318,9 @@ controllersModule.controller("GameController", function($scope, $http, $statePar
 		 $scope.justAdded = false; 
 		 $scope.already = false;
 	}
+
+	// check if user logged in
+	$scope.logged = loginService.get();
    
 });
 
