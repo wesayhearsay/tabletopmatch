@@ -31,6 +31,10 @@ a {
 	color: #EB7B59;
 }
 
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
 .main {
 	padding: 25px;
 	padding: 2.5rem;
