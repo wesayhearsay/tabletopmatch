@@ -120,6 +120,9 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
 		exists = userService.find(gameID);
 		return exists;
 	}
+    $scope.isLoggedIn = function(){
+        return loginService.get();
+    }
 	//Question filter
 	$scope.questionNumber = 0;
 	$scope.questionModel = questions;
@@ -149,9 +152,6 @@ controllersModule.controller('ContentController', function($scope, $http, $locat
 			
 		}
 	}
-
-	// check if user logged in
-	$scope.logged = loginService.get();
 
 	// accordion tag filtering
 	$scope.tagFilter = function(game) {
