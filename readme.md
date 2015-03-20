@@ -4,8 +4,8 @@
 
 ## Team
 
-* Willie Bock, NUMBER HERE, <>
-* Diana Lipcanu, NUMBER HERE, <lipcanu@kth.se>
+* Willie Bock, 861008-T872, <wbock@kth.se>
+* Diana Lipcanu, 920202-7042, <lipcanu@kth.se>
 * Andrés Sierra Sierra, 851219-T696, <asierra@kth.se>
 * Francesco Vitale, 901027-T311, <vitale@kth.se>
 
