@@ -83,7 +83,7 @@ controllersModule.controller('SidebarController', function($scope, playerService
 	}
 });
 
-controllersModule.controller('ContentController', function($scope, $http, $location, userService, gamesService, filterService, playerService, ageService, timeService, complexityService, questionsService) {
+controllersModule.controller('ContentController', function($scope, $http, $location, userService, gamesService, filterService, playerService, ageService, timeService, complexityService, questionsService, loginService) {
 	//checks if the games.json has ever been accessed before.
 	//this is done so that the json is not included every time 
 	if (!gamesService.isInitialized()) {

@@ -3,20 +3,19 @@
 	<div id="playersFilter" class="sidebar-filter">
 		<h3 class="sidebar-heading">Number of players <a href="#" ng-model="collapsePlayers" ng-click="collapsePlayers=!collapsePlayers"><span class="glyphicon filter-toggle" ng-class="{'glyphicon-chevron-down': collapsePlayers, 'glyphicon-chevron-up': !collapsePlayers}"></span></a></h3> 
 
-		<div class="filter-collapse" ng-hide="collapsePlayers" range-slider min="playerLimit.min " model-min="playerLimit.userMin" max="playerLimit.max" model-max="playerLimit.userMax" pin-handle="min" step="1" attach-handle-values="true" ng-click="includePlayers(playerLimit.userMax)" ng-model="playerLimit" ></div>
+		<div class="filter-collapse" ng-hide="collapsePlayers" range-slider min="playerLimit.min " model-min="playerLimit.userMin" max="playerLimit.max" model-max="playerLimit.userMax" pin-handle="min" step="1" attach-handle-values="true" ng-mousemove="includePlayers(playerLimit.userMax)" ng-model="playerLimit" ></div>
 	</div><!-- end #playersFilter -->
 
 	<div id="ageFilter" class="sidebar-filter">
 		<h3 class="sidebar-heading">Minimum age <a href="#" ng-model="collapseAge" ng-click="collapseAge=!collapseAge"><span class="glyphicon filter-toggle" ng-class="{'glyphicon-chevron-down': collapseAge, 'glyphicon-chevron-up': !collapseAge}"></span></a></h3>
 
-		<div ng-hide="collapseAge" range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="min" step="2" attach-handle-values="true" ng-click="includeAge(ageLimit.userMax)" ng-model="ageLimit" ></div>
-		<!-- <div>this is ageFilter here: {{ageFilter}}</div> -->
+		<div ng-hide="collapseAge" range-slider min="ageLimit.min" model-min="ageLimit.userMin" max="ageLimit.max" model-max="ageLimit.userMax" pin-handle="min" step="2" attach-handle-values="true" ng-mousemove="includeAge(ageLimit.userMax)" ng-model="ageLimit" ></div>
 	</div> <!-- end #ageFilter -->
 
 	<div id="timeFilter" class="sidebar-filter">
 		<h3 class="sidebar-heading">Time <a href="#" ng-model="collapseTime" ng-click="collapseTime=!collapseTime"><span class="glyphicon filter-toggle" ng-class="{'glyphicon-chevron-down': collapseTime, 'glyphicon-chevron-up': !collapseTime}"></span></a></h3>
 
-		<div ng-hide="collapseTime" range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-click="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit" filter="timeFilter"></div>
+		<div ng-hide="collapseTime" range-slider min="timeLimit.min" max="timeLimit.max" model-min="timeLimit.userMin" model-max="timeLimit.userMax" step="10" attach-handle-values="true" ng-mousemove="includeTime(timeLimit.userMin, timeLimit.userMax)" ng-mousemove="timeLimit" filter="timeFilter"></div>
 
 		<!-- <div>this is timeFilter here: {{timeFilter}}</div> -->
 	</div><!-- end #timeFilter -->

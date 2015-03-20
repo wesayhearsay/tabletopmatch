@@ -282,6 +282,13 @@ a {
 	background: rgba(40, 51, 64, 1);
 }
 
+.game-add-button, .game-check-button {
+	color: #3EA571; /* green */
+}
+
+.game-remove-button {
+	color: #eb597f; /* redish */
+}
 
 .game-card {
 	float: none;
@@ -320,15 +327,15 @@ a.thumbnail.active {
 
 .progress-bar-success,
 .label-success {
-	background-color: #3EA571;
+	background-color: #3EA571; /* green */
 }
 .progress-bar-warning,
 .label-warning {
-	background-color: #ebc559;
+	background-color: #ebc559; /* yellow */
 }
 .progress-bar-danger,
 .label-danger {
-	background-color: #eb597f;
+	background-color: #eb597f; /* redish */
 }
 
 /**************************
@@ -345,6 +352,10 @@ a.thumbnail.active {
 	padding-top: 0;
 	padding-bottom: 20px;
 	padding-bottom: 2rem;
+}
+
+.game-rating {
+	color: #ebc559; /* yellow */
 }
 
 .game-detail-heading {

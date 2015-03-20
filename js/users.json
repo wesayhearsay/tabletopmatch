@@ -1,6 +1,6 @@
 [{
     "id": "1",
-	"name": "Andres", 
+	"name": "Andrés", 
 	"email": "andres@ttmatch.com",
 	"password": "reallysafepassword", 
 	"image": "img/users/user_andres.svg"

@@ -52,12 +52,17 @@
 
 
 	<!-- uses Angular's directive ng-repeat to create a loop through the array of objects defined in $scope.games -->
-	<div ng-repeat="game in filteredGames = (games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering | filter:complexityFiltering | orderBy:'-compatRating') " class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-3 ">
-	<a href="#" ng-hide="inLibrary(game.id)" ng-click="addToLibrary(game.id, game.name, game.image, 0)">
-	<span class="glyphicon glyphicon-plus"></span>
-	</a>
-	<span  ng-show="inLibrary(game.id)" class="glyphicon glyphicon-ok"></span>
-	<a href="#" ng-show="inLibrary(game.id)" ng-click="removeFromLibrary(game.id)"><span class="glyphicon glyphicon-remove"></span></a>
+	<div ng-repeat="game in filteredGames = (games | filter:tagFilter | filter:ageFiltering | filter:timeFiltering | filter:playerFiltering | filter:complexityFiltering | orderBy:'-compatRating') " class="game-card col-xs-6 col-sm-3 col-md-3 col-lg-3 " >
+	
+		<div class="game-buttons" ng-show="logged">
+			<a href="#" class="game-add-button" ng-hide="inLibrary(game.id)" ng-click="addToLibrary(game.id, game.name, game.image, 0)">
+				<span class="glyphicon glyphicon-plus"></span></a>
+			<span class="game-check-button glyphicon glyphicon-ok" ng-show="inLibrary(game.id)"></span>
+			<a href="#" class="game-remove-button" ng-show="inLibrary(game.id)" ng-click="removeFromLibrary(game.id)"><span class="glyphicon glyphicon-remove"></span></a>
+		</div>
+	
+	
+	
 		<a href class="thumbnail"  ng-click="show(game.id)" ui-sref=".detail({id: game.id})">
 			<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
 			<img src="img/thumb_{{game.image}}" class="game-img" />
