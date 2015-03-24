@@ -12,7 +12,7 @@
 			<ul class="nav navbar-nav ">
 				<li><a href="#/" title="Games">Games</a></li>
 				<li><a href="#/profile" title="My library" ng-show="logged">My library</a></li>
-				<li><a href="#" title="Logout" ng-show="logged" ng-click="logout()">Logout</a></li>
+				<li><a href="#" onclick="window.location.reload(true);" title="Logout" ng-show="logged" ng-click="logout()">Logout</a></li>
 				<li><a href="#/profile" title="Login" ng-hide="logged" ng-click="login()">Login</a></li>
 				<li><a href="#" title="Sign Up" ng-hide="logged">Sign Up</a></li>
 			</ul>

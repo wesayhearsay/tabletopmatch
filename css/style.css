@@ -31,6 +31,10 @@ a {
 	color: #EB7B59;
 }
 
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
 .main {
 	padding: 25px;
 	padding: 2.5rem;
@@ -322,6 +326,10 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
 	border-color: #EB7B59;
+}
+
+.game-img {
+	max-width: 12rem !important; /* overrides bootstrap thumbnail width */
 }
 
 .progress {

@@ -13,7 +13,9 @@
 Tabletop Match is an application to find the best board game to buy or play. Based on some filters and questions, gamers will be able to find the best match. They also can build a personal library, add games, remove them, rate them. 
 
 ## Technical details
-To develop the project, we used AngularJS and Bootstrap. Right now we have a limited “database” of games with around 60 titles. We plan to expand that, and add more information to each game.   
+To develop the project, we used AngularJS and Bootstrap. The application is responsive. 
+
+Right now we have a limited “database” of games with around 60 titles. We plan to expand that, and add more information to each game.   
 
 Also, the login is not fully implemented: it's just there to illustrate what changes when you are logged in (you can have your own library, add games to it, rate them, etc.).  
 

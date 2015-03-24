@@ -5,7 +5,7 @@
 		<div ng-repeat="(key, shelf) in shelves">
 		<div id="shelf-{{shelf.id}}" class="shelf shelf-drop" ui-on-Drop="onDrop($event,$data,[],shelf.id)">
 			<h3 class="shelf-label">{{shelf.name}} <span class="drop-forbidden">(You can't add a game here, sorry!)</span><a href="#/profile" ng-model="collapseShelf" ng-click="collapseShelf=!collapseShelf"><span class="glyphicon filter-toggle" ng-class="{'glyphicon-chevron-down': collapseShelf, 'glyphicon-chevron-up': !collapseShelf}"></span></a></h3>
-				<div ng-hide="collapseShelf" ng-repeat="game in library | filter:{shelfID: shelf.id}" class="game-card game-move col-xs-6 col-sm-3 col-md-3 col-lg-2" ui-draggable="true" drag="game" on-drop-success="dropSuccessHandler($event,$index,library)">
+				<div ng-hide="collapseShelf" ng-repeat="game in library | filter:{shelfID: shelf.id}" class="game-card game-move col-xs-6 col-sm-3 col-md-3 col-lg-3" ui-draggable="true" drag="game" on-drop-success="dropSuccessHandler($event,$index,library)">
 					<a href class="thumbnail" ng-click="show(game.id)" ui-sref="home.detail({id: game.id})">
 						<!-- the image name is the one that has been uploaded to the website, whilte the thumb_imagename is the one that has been resized by the backend of the CMS -->
 						<img src="img/thumb_{{game.image}}" class="game-img" />
